@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<!-- javascript -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,39 +55,69 @@
 <script src="verificar-senhas.js"></script>
 
 <?php
+
 $conexao = mysqli_connect('localhost', 'root', '', 'projeto');
 session_start();
-$_SESSION['contA'] =0;
 if (isset($_POST["cadastrar"])) {
+    // echo "<a href='avatar.php'>
+    // <button> Continuar </button> </a>";
 
-    $nome = $_POST['usuario'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $confsenha = $_POST['confirmar'];
-$_SESSION['nome'] =$nome;
-    if ($senha == $confsenha) {
+    $email = $_POST["email"];
 
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+    echo $email;
+
+    $sqlA = " SELECT * FROM usuario WHERE email='$email'";
+
+    $resultA = mysqli_query($conexao, $sqlA);
+    $numrows = mysqli_num_rows($resultA);
+
+    if ($numrows == 0) {
 
 
-        $sql = "INSERT INTO usuario(nome, senha, email)VALUES ('$nome', '$senha', '$email')";
-        $result = mysqli_query($conexao, $sql);
+        $Usuario = $_POST["usuario"];
+        $email = $_POST["email"];
+        $Senha = $_POST["senha"];
+        $Confirma = $_POST["confirmar"];
+        $_SESSION['nome'] = $Usuario;
+        $sqlB = "INSERT INTO usuario (nome,email,senha)
+                VALUES ('$Usuario','$email','$Senha')";
 
-        header("location: login.php");
+        $resultB = mysqli_query($conexao, $sqlB);
+        echo "<script>alert('usuario cadastrado')</script>";
     } else {
-        if ($senha != 'senha'){
-            echo "<script>alert('senha errada')</script>";
-            return false;
-        }
-       
+        echo "<script>alert('Email não disponivel')</script>";
     }
+    if (isset($_POST["logar"])) {
+        $conexao = mysqli_connect('localhost', 'root', '', 'projeto');
 
+        $email = $_POST["email"];
+        $Senha = $_POST["senha"];
 
-  
+        $sqlC = " SELECT * FROM cadastro WHERE Email='$email'";
+
+        $resultC = mysqli_query($conexao, $sqlC);
+        $numlinha = mysqli_num_rows($resultC);
+
+        if ($numlinha > 0) {
+            while ($linha = mysqli_fetch_array($resultC)) {
+
+                if ($email == $linha['Email']) {
+
+                    if ($Senha == $linha['Senha']) {
+                        echo "esta logado" . "<br>";
+                        echo "<a href='avatar.php'>
+                               <button> Continuar </button> </a>";
+                    } else {
+                        echo "<script>alert('senha incorreta')</script>";
+                    }
+                } else {
+                    echo "<script>alert('não esta logado')</script>";
+                  }
+            }
+        } else {
+            echo "<script>alert('email não registrado')</script>";
+        }
+    }
 }
-
-
-
-
 
 ?>

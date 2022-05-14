@@ -243,7 +243,7 @@ session_start();
             var y = document.getElementById("body");
             var fundos = ['linear-gradient(to bottom right, #19516b, #000000)',
                 'linear-gradient(to bottom right, #591956, #000000)', 'linear-gradient(to bottom right, #714e29, #000000)',
-                'linear-gradient(to bottom right, #856f5e, #000000)'
+                'linear-gradient(to bottom right, #856f5e, #000000)','linear-gradient(to bottom right, #87515f, #000000)'
             ];
             if (n > x.length) {
                 slide = 1

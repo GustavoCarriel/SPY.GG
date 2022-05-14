@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
     grid-template-columns: 70% 30%;
     grid-template-rows: 10vh 1fr;
-    grid-template-areas: 'header header' 'left right';
+    grid-template-areas: 'header header''left right';
 }
 
 header {
@@ -85,6 +85,7 @@ header .image .detetive img {
     position: fixed;
     z-index: 1;
     padding-top: 100px;
+    border-radius: 12px;
     left: 0;
     top: 0;
     width: 100%;
@@ -103,7 +104,7 @@ header .image .detetive img {
     background-color: #353535;
     margin: auto;
     width: 60%;
-    color:white;
+    color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -168,20 +169,45 @@ header .image .detetive img {
     cursor: pointer;
 }
 
+.close3 {
+    margin-right: 20px;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+    color: rgba(255, 0, 0, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* essa é a div pra arrumar \(º_º)/ */
+
 .modal-header {
     padding: 7px 16px;
+    margin-right: 22px;
     padding-bottom: 2%;
     background-color: #323232;
     color: #dde;
 }
 
 .modal-body {
-    padding: 10px 20px 10px 20px; 
+    padding: 10px 20px 10px 20px;
     padding-bottom: 80px;
     height: 300px;
     overflow-y: scroll;
     font-size: 18px;
     color: #dde;
+}
+
+.modal-body p {
+    font-size: 18px;
+    color: #dde;
+    text-align: justify;
 }
 
 
@@ -204,7 +230,7 @@ header .image .detetive img {
     padding: 7px 16px;
     position: absolute;
     bottom: 0px;
-    width: 100%;
+    width: 93%;
     padding-top: 2%;
     background-color: #323232;
     color: #dde;
@@ -265,19 +291,22 @@ header .image .detetive img {
 }
 
 .botao {
-    background: rgb(114, 43, 43);
-    color: #fff;
-    width: 120px;
-    height: 50px;
-    font-size: 18px;
-    border-radius: 12px;
+    margin: 5% 0 0 5%;
+    width: 8rem;
     cursor: pointer;
+    height: 2.5rem;
+    border: 2px solid #ff0043;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
 }
 
 .botao:hover {
-    background: rgb(91, 1, 1);
-    color: #fff;
-    transition: 0.6s;
+    box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
+    background-color: #ff0043;
 }
 
 .contador {
@@ -304,6 +333,7 @@ header .image .detetive img {
     box-shadow: 0 0 10px #bebebe;
     border-radius: 12px;
     padding: 2%;
+    margin-top: 2%;
     height: 220px;
 }
 
@@ -357,6 +387,7 @@ header .image .detetive img {
     padding: 10px;
     margin: auto;
     border: 2px solid #aaaaaa;
+    margin-top: 2%;
 }
 
 #drag1 {
@@ -372,17 +403,23 @@ header .image .detetive img {
 }
 
 .button1 {
-    background: rgb(114, 43, 43);
-    color: #fff;
-    width: 120px;
-    height: 50px;
-    font-size: 18px;
-    border-radius: 12px;
+    margin-top: 3%;
+    margin-left: 3%;
+    width: 8rem;
+    height: 2.5rem;
     cursor: pointer;
-    margin-bottom: 3%;
-    margin-top: 2%;
-    margin-left: 35%;
-    padding: 5px;
+    border: 2px solid #ff0043;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
+}
+
+.button1:hover {
+    box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
+    background-color: #ff0043;
 }
 
 .caixa-43 {

@@ -55,6 +55,12 @@ if (isset($_POST["logar"])) {
 
             if ($Email == $linha['email'] ){
 
+                $_SESSION['ID']= $linha['id'];
+                $_SESSION['NOME']= $linha['nome'];
+                $_SESSION['EMAIL']= $linha['email'];
+                $_SESSION['SENHA']= $linha['senha'];
+                $_SESSION['DETETIVE']= $linha['detetive'];
+
             if ($Senha == $linha['senha']){
                 $_SESSION['nome'] = $linha['nome'];
                 $_SESSION['IdUsuario']= $linha['id'];
