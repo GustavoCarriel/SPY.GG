@@ -77,7 +77,7 @@
         if (isset($_POST['pers2'])) {
             echo "inocente 2";
             header('location:' . "lost.php");
-        }
+        } 
 
 
 
