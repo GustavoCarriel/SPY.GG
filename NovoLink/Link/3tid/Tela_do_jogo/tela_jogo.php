@@ -164,7 +164,8 @@
         $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
         $relustD = mysqli_query($conexao, $sqlD);
         $pers = 4;
-        $sqlP = "SELECT * FROM personagens WHERE Idpersonagem =$pers ";
+        $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
+
         $resultP = mysqli_query($conexao, $sqlP);
         while ($linhaJogo = mysqli_fetch_array($relustD)) {
 
@@ -222,7 +223,7 @@
         while ($linhaC = mysqli_fetch_array($resultD)) {
 
             $ccc = $linhaC['IdPers'];
-            $sqlP = "SELECT * FROM personagens WHERE Idpersonagem = $ccc";
+            $sqlP = "SELECT * FROM personagens WHERE IdDial = $ccc";
             $resultP = mysqli_query($conexao, $sqlP);
 
 
