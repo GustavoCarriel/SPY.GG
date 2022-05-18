@@ -20,7 +20,7 @@
         <h1 class="h1">QUEM MATOU O MÉDICO?</h1>
         <?php
         session_start();
-        $_SESSION['contA'] =0;
+        $_SESSION['contA'] = 0;
         // $nome = $_SESSION['nome'];
         // echo $nome;
         ?>
@@ -70,39 +70,119 @@
 
         <?php
         if (isset($_POST['pers1'])) {
-            echo "inocente 1";
-            header('location:' . "winner.php");
+
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 1;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    echo "errou";
+                    header("location:" . "lost.php");
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
         }
 
         if (isset($_POST['pers2'])) {
-            echo "inocente 2";
-            header('location:' . "lost.php");
-        } 
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 3;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    header("location:" . "lost.php");
+                    echo "errou";
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
+        }
 
 
 
 
         if (isset($_POST['pers3'])) {
-            echo "inocente 3";
-            header('location:' . "lost.php");
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 5;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    header("location:" . "lost.php");
+                    echo "errou";
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
         }
 
 
         if (isset($_POST['pers4'])) {
-            echo "culpado";
-            header('location:' . "lost.php");
+
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 6;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    echo "errou";
+                    header("location:" . "lost.php");
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
         }
 
 
         if (isset($_POST['pers5'])) {
-            echo "inocente 5";
-            header('location:' . "lost.php");
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 2;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    echo "errou";
+                    header("location:" . "lost.php");
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
         }
 
 
         if (isset($_POST['pers6'])) {
-            echo "inocente 6";
-            header('location:' . "lost.php");
+            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            $ID = 4;
+            $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
+            $result = mysqli_query($conexao, $sql);
+            while ($linha = mysqli_fetch_array($result)) {
+                if ($linha["Testemunhas"] == "Inocente") {
+                    echo "errou";
+                    header("location:" . "lost.php");
+                }
+
+                if ($linha["Testemunhas"] == "Culpado") {
+                    echo "acertou";
+                    header("location:" . "winner.php");
+                }
+            }
         }
 
 

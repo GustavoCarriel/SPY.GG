@@ -1,0 +1,597 @@
+* {
+    /* DEFINIR QUE A PAGINA TENHA NENHUMA MARGIN E NENHUM PADDING, SEM BORDAS, SEM DECORAÇÕES DE TEXTO TBM, MAS  RESUMINDO É RESETAR AS CONFIGURAÇÕES PRE DEFINIDAS DO NAVEGADOR */
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+/* \(º_º)/ */
+
+:root {
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: url("img/hospital.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.container_all {
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 10vh 1fr;
+    grid-template-areas: 'header header' 'left right';
+}
+
+header {
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid white;
+}
+
+header h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-style: italic;
+    padding: 8rem;
+}
+
+header .image img {
+    height: 35px;
+    margin: .7rem;
+}
+
+header .image {
+    display: flex;
+    width: 15rem;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: width 2s;
+    /* border: 2px solid #ff0043; */
+}
+
+header .image .detetive img {
+    background-color: #e1dddd;
+    height: 70px;
+    border-radius: 40px;
+}
+
+
+/* modal */
+
+#myBtn {
+    background: none;
+}
+
+.button2 {
+    cursor: pointer;
+    margin: 2% 0 0 5%;
+    width: 8rem;
+    height: 2.5rem;
+    border: 2px solid #ff0043;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
+}
+
+.button2:hover {
+    box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
+    background-color: #ff0043;
+}
+
+.button3 {
+    cursor: pointer;
+    margin: 5% 0 0 33%;
+    width: 8rem;
+    height: 2.5rem;
+    border: 2px solid #ff0043;
+    background: #5c1125;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
+}
+
+.button3:hover {
+    box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
+    background-color: #ff0043;
+}
+
+.modal {
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: var(--font);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    padding: 10px 20px 10px 20px;
+    position: relative;
+    background-color: #353535;
+    margin: auto;
+    width: 60%;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    margin-right: 20px;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgba(255, 0, 0, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close3 {
+    margin-right: 20px;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+    color: rgba(255, 0, 0, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close2 {
+    margin-left: 20px;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+    color: rgba(255, 0, 0, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 7px 16px;
+    padding-bottom: 2%;
+    background-color: #323232;
+    color: #dde;
+}
+
+.modal-body {
+    padding: 10px 20px 10px 20px;
+    padding-bottom: 80px;
+    height: 300px;
+    overflow-y: scroll;
+    font-size: 18px;
+    color: #dde;
+}
+
+
+/* scrollbar */
+
+.modal-body::-webkit-scrollbar {
+    width: 12px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, 0.8);
+}
+
+
+/* scrollbar */
+
+.modal-footer {
+    padding: 7px 16px;
+    position: absolute;
+    bottom: 0px;
+    width: 95%;
+    padding-top: 2%;
+    background-color: #323232;
+    color: #dde;
+}
+
+
+/* fim modal */
+
+.sct_dialogo {
+    grid-area: left;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    width: 90%;
+    height: 80vh;
+    padding: 2%;
+    margin: 5vh 5%;
+    backdrop-filter: blur(50px);
+    /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px #bebebe;
+}
+
+.sct_palpite {
+    grid-area: right;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #bebebe;
+    border-radius: 20px;
+    height: 80vh;
+    width: 90%;
+    margin: 5vh 5%;
+    backdrop-filter: blur(50px);
+}
+
+.sct_palpite1 {
+    margin-top: -9%;
+    margin-left: 109%;
+    grid-area: right;
+    border: 3px solid rgb(161, 0, 0);
+    border-radius: 20px;
+    height: 80vh;
+    width: 45%;
+    /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px #cf0f0f;
+}
+
+.suspeitos {
+    background-color: #60070c;
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.inocentes {
+    background-color: #17521e;
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.div_personagem {
+    display: flex;
+    margin: 5% 0;
+    justify-content: center;
+}
+
+.div_personagem img {
+    height: 100px;
+}
+
+.botao {
+    cursor: pointer;
+    margin: 2% 0 0 5%;
+    width: 8rem;
+    height: 2.5rem;
+    border: 2px solid #ff0043;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
+}
+
+.botao:hover {
+    box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
+    background-color: #ff0043;
+}
+
+.contador {
+    font-family: var(--font);
+    font-size: 18px;
+    color: #223;
+    margin-bottom: 3%;
+    padding: 5px;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px #bebebe;
+    border-radius: 12px;
+    width: 9%;
+}
+
+
+/* #DialogosJogo {
+    display: none;
+} */
+
+.dialogo-personagens {
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px #bebebe;
+    border-radius: 12px;
+    padding: 2%;
+    height: 220px;
+}
+
+.personagens-imagem {
+    border: solid 4px rgb(39, 39, 39);
+    border-radius: 12px;
+    /* padding: 5px; */
+    background: rgb(69, 69, 69);
+}
+
+.personagens-texto {
+    font-family: var(--font);
+    color: #dde;
+    font-size: 18px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.dialogo-detetive {
+    font-family: var(--font);
+    display: flex;
+    justify-content: space-between;
+    color: #dde;
+    font-size: 18px;
+    margin-top: 2.5%;
+    margin-bottom: 1%;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px #bebebe;
+    border-radius: 12px;
+    padding: 2%;
+}
+
+.dialogo-continuar {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.nome-dialogo {
+    color: #23cd37;
+}
+
+#div1,
+#div2,
+#div3 {
+    height: 65vh;
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+    border: 2px solid #aaaaaa;
+}
+
+#drag1 {
+    margin-bottom: 5px;
+}
+
+#div2 {
+    background: rgb(47, 156, 51);
+}
+
+#div3 {
+    background: rgb(156, 47, 47);
+}
+
+.button1 {
+    cursor: pointer;
+    background: rgb(114, 43, 43);
+    color: #fff;
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    margin-left: 35%;
+    padding: 5px;
+}
+
+.caixa-43 {
+    display: flex;
+}
+
+ul#album-fotos li {
+    padding-right: 5px;
+    margin-left: 5%;
+    margin-top: 2%;
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ff0043;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+}
+
+ul#album-fotos li span {
+    height: 200%;
+    width: 300px;
+    margin-right: 20%;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(109, 0, 0) 0.1em 0.1em 0.2em;
+    background: 20px 20px 20px 20px;
+    line-break: auto;
+    line-height: 30px;
+    font-size: 10pt;
+    padding: 5px;
+}
+
+ul#album-fotos li:hover {
+    box-shadow: 0 0 20px #f10000;
+    -webkit-transform: scale(1.5);
+    -webkit-transition: all 0.4s ease-in;
+}
+
+ul#album-fotos li:hover span {
+    opacity: 1;
+}
+
+li#foto01 {
+    background-image: url('../Tela_do_jogo/seringa.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto01:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+li#foto02 {
+    background-image: url('../Tela_do_jogo/cama.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto02:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+li#foto03 {
+    background-image: url('../Tela_do_jogo/remedio.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto03:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+li#foto04 {
+    background-image: url('../Tela_do_jogo/tosse.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto04:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+li#foto05 {
+    background-image: url('../Tela_do_jogo/homem.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto05:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+li#foto06 {
+    background-image: url('../Tela_do_jogo/fratura.jpg');
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: white;
+}
+
+ul#album-fotos li#foto06:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+
+.armas {
+    margin-top: 50px;
+}
+
+.arma {
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    margin: 2% 0 6% 15%;
+    width: 70%;
+    height: 2.5rem;
+    border: 2px solid #ff0043;
+    background: #5c1125;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px #ff0043;
+}
+
+.arma:hover {
+    box-shadow: 0 0 5px #be254e, 0 0 25px #be254e, 0 0 50px #be254e, 0 0 100px #be254e;
+    background-color: #be254e;
+}

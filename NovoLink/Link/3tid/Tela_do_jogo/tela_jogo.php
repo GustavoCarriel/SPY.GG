@@ -6,6 +6,8 @@
     numero inicial =1 => continuar
     maior que 1 = 2++ => parar
 
+    ver tipos de : substr
+
  -->
 
 
@@ -57,39 +59,39 @@
 
 
                         <?php
-                        
 
-                            /* TABELA DE INFORMAÇÕES DO USUARIO*/
 
-                            //////////////////////////////////////////////////////////////////////////////////
+                        /* TABELA DE INFORMAÇÕES DO USUARIO*/
 
-                            // Id do detetive
-                            // $_SESSION['IDDETETIVE'] . "<br>";
+                        //////////////////////////////////////////////////////////////////////////////////
 
-                            // Nome do detetive
-                            // $_SESSION['NOMEDETETIVE'] . "<br>";
+                        // Id do detetive
+                        // $_SESSION['IDDETETIVE'];
 
-                            // Foto do detetive
-                            // $_SESSION['FOTODETETIVE'] . "<br>";
+                        // Nome do detetive
+                        // $_SESSION['NOMEDETETIVE'];
 
-                            // Id do usuario
-                            // $_SESSION['ID'] . "<br>";
+                        // Foto do detetive
+                        // $_SESSION['FOTODETETIVE'];
 
-                            // Nome do usuario
-                            // $_SESSION['NOME'] . "<br>";
+                        // Id do usuario
+                        // $_SESSION['ID'];
 
-                            // Email do usuario
-                            // $_SESSION['EMAIL'] . "<br>";
+                        // Nome do usuario
+                        // $_SESSION['NOME'];
 
-                            // Senha do usuario
-                            // $_SESSION['SENHA'] . "<br>";
+                        // Email do usuario
+                        // $_SESSION['EMAIL'];
 
-                            // Id da foto do detetive
-                            // $_SESSION['DETETIVE'] . "<br>";
+                        // Senha do usuario
+                        // $_SESSION['SENHA'];
 
-                            //////////////////////////////////////////////////////////////////////////////////
+                        // Id da foto do detetive
+                        // $_SESSION['DETETIVE'];
 
-                        
+                        //////////////////////////////////////////////////////////////////////////////////
+
+
 
                         ?>
                         <button id="myBtn">
@@ -264,12 +266,67 @@
 
                         <img class="personagens-imagem" src="img/<?php echo $linhaP['Fotopersonagem'] ?>" width="100px" alt="">
                         <div class="personagens-texto">
-                            <p><?php echo $linhaC['dialogo'] ?></p>
-                            <h3><?php echo $linhaP['Nomeperso']; ?></h3>
+                            <?php
+
+                            $Fala = explode("$", $linhaC['dialogo']);
+                            $elementos = count($Fala);
+                            for ($indice = 0; $indice < $elementos; $indice++) {
+                                if ($Fala[$indice] == "pers1") {
+                                    $sqlP1 = "SELECT * FROM personagens WHERE IdDial = 1";
+                                    $resultP1 = mysqli_query($conexao, $sqlP1);
+                                    while ($linhaP1 = mysqli_fetch_array($resultP1)) {
+                                        $Fala[$indice] = $linhaP1['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers2") {
+
+                                    $sqlP2 = "SELECT * FROM personagens WHERE IdDial = 2";
+                                    $resultP2 = mysqli_query($conexao, $sqlP2);
+                                    while ($linhaP2 = mysqli_fetch_array($resultP2)) {
+                                        $Fala[$indice] = $linhaP2['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers3") {
+
+                                    $sqlP3 = "SELECT * FROM personagens WHERE IdDial = 3";
+                                    $resultP3 = mysqli_query($conexao, $sqlP3);
+                                    while ($linhaP3 = mysqli_fetch_array($resultP3)) {
+                                        $Fala[$indice] = $linhaP3['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers4") {
+
+                                    $sqlP4 = "SELECT * FROM personagens WHERE IdDial = 4";
+                                    $resultP4 = mysqli_query($conexao, $sqlP4);
+                                    while ($linhaP4 = mysqli_fetch_array($resultP4)) {
+                                        $Fala[$indice] = $linhaP4['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers5") {
+
+                                    $sqlP5 = "SELECT * FROM personagens WHERE IdDial = 5";
+                                    $resultP5 = mysqli_query($conexao, $sqlP5);
+                                    while ($linhaP5 = mysqli_fetch_array($resultP5)) {
+                                        $Fala[$indice] = $linhaP5['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers6") {
+
+                                    $sqlP6 = "SELECT * FROM personagens WHERE IdDial = 6";
+                                    $resultP6 = mysqli_query($conexao, $sqlP6);
+                                    while ($linhaP6 = mysqli_fetch_array($resultP6)) {
+                                        $Fala[$indice] = $linhaP6['Nomeperso'];
+                                    }
+                                }
+
+
+
+                                
+                            ?>
+                                <?php echo  $Fala[$indice];?>
+                                <?php
+                            }
+                    ?>
+                                <h3><?php echo $linhaP['Nomeperso']; ?></h3>
                         </div>
 
 
-
+                    
 
 
                     </div>
@@ -282,24 +339,24 @@
 
 
                     <!-- fim dos dialogos -->
-        <?php
+                <?php
 
                 }
                 if ($IdC == 14) {
 
-                    ?>
+                ?>
                     <form action="question.php" method="post">
-                    <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
+                        <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
                     </form><?php
+                        }
+                    }
+
+                    // if($IdC =10){
+                    //     echo"ssss";
+                    // }
                 }
-            }
 
-            // if($IdC =10){
-            //     echo"ssss";
-            // }
-        }
-
-        ?>
+                            ?>
 
 
 </section>
@@ -316,7 +373,7 @@
 
             if ($linhaDI = mysqli_fetch_array($resultD)) {
                 $persDicas = $linhaDI['IdPers'];
-                $sqlPersD = "SELECT * FROM personagens WHERE Idpersonagem = $persDicas";
+                $sqlPersD = "SELECT * FROM personagens WHERE IdDial = $persDicas";
                 $resultPersD = mysqli_query($conexao, $sqlPersD);
                 if ($linhaPD = mysqli_fetch_array($resultPersD)) {
 
@@ -355,7 +412,7 @@
 
                 </p>
 
-<a href="teste.php">testeR</a>
+                <a href="teste.php">testeR</a>
 
             </div>
 

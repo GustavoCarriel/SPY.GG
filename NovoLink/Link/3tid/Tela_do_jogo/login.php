@@ -62,9 +62,7 @@ for ($a = 1; $a <= 6; $a++) {
         if ($linhaP['Idpersonagem'] == 2) {
             $NomeP2 = $linhaP['Nomeperso'];
         }
-        if ($linhaP['Idpersonagem'] == 3) {
-            $NomeP3 = $linhaP['Nomeperso'];
-        }
+       
         if ($linhaP['Idpersonagem'] == 4) {
             $NomeP4 = $linhaP['Nomeperso'];
         }
@@ -79,7 +77,7 @@ for ($a = 1; $a <= 6; $a++) {
 
 
 // Matriz com todos os participantes
-$participantes = array($NomeP1, $NomeP2, $NomeP3, $NomeP4, $NomeP5, $NomeP6);
+$participantes = array($NomeP1, $NomeP2, $NomeP4, $NomeP5, $NomeP6);
 // Definindo o número de participantes
 $numParticipantes = sizeof($participantes);
 // Informações adicionais
@@ -123,14 +121,6 @@ for ($i = 1; $i < 2; $i++) {
     }
 }
 
-# sexto ganhador
-for ($i = 1; $i < 2; $i++) {
-    $sorteado[6] = $participantes[rand(0, $numParticipantes - 1)];
-    // Caso o ganhador já tenha saido, sorteia novamente.
-    if ($sorteado[6] == $sorteado[5] || $sorteado[6] == $sorteado[4] || $sorteado[6] == $sorteado[3] || $sorteado[6] == $sorteado[1] || $sorteado[6] == $sorteado[2]) {
-        --$i;
-    }
-}
 
 
 
@@ -163,7 +153,7 @@ $resultR3 = mysqli_query($conexao, $sqlR3);
 while ($linhaR = mysqli_fetch_array($resultR3)) {
     echo $linhaR['Nomeperso']."<br>";
     $Muda3 = $linhaR['Nomeperso'];
-    $sqlM3 = "UPDATE personagens SET Testemunhas='Inocente' ,IdDial='3' WHERE Nomeperso='$Muda3'";
+    $sqlM3 = "UPDATE personagens SET Testemunhas='Inocente' ,IdDial='4' WHERE Nomeperso='$Muda3'";
     $relultM3 = mysqli_query($conexao, $sqlM3);
 }
 
@@ -174,7 +164,7 @@ $resultR4 = mysqli_query($conexao, $sqlR4);
 while ($linhaR = mysqli_fetch_array($resultR4)) {
     echo $linhaR['Nomeperso']."<br>";
     $Muda4 = $linhaR['Nomeperso'];
-    $sqlM4 = "UPDATE personagens SET Testemunhas='Inocente',IdDial='4' WHERE Nomeperso='$Muda4'";
+    $sqlM4 = "UPDATE personagens SET Testemunhas='Inocente',IdDial='5' WHERE Nomeperso='$Muda4'";
     $relultM4 = mysqli_query($conexao, $sqlM4);
 }
 
@@ -185,21 +175,12 @@ $resultR5 = mysqli_query($conexao, $sqlR5);
 while ($linhaR = mysqli_fetch_array($resultR5)) {
     echo $linhaR['Nomeperso']."<br>";
     $Muda5 = $linhaR['Nomeperso'];
-    $sqlM5 = "UPDATE personagens SET Testemunhas='Inocente',IdDial='5' WHERE Nomeperso='$Muda5'";
+    $sqlM5 = "UPDATE personagens SET Testemunhas='Inocente',IdDial='6' WHERE Nomeperso='$Muda5'";
     $relultM5 = mysqli_query($conexao, $sqlM5);
 }
 
 
 
-#muda 6
-$sqlR6 = "SELECT * FROM personagens WHERE Nomeperso ='$sorteado[6]' ";
-$resultR6 = mysqli_query($conexao, $sqlR6);
-while ($linhaR = mysqli_fetch_array($resultR6)) {
-    echo $linhaR['Nomeperso']."<br>";
-    $Muda6 = $linhaR['Nomeperso'];
-    $sqlM6 = "UPDATE personagens SET Testemunhas='Inocente',IdDial='6' WHERE Nomeperso='$Muda6'";
-    $relultM6 = mysqli_query($conexao, $sqlM6);
-}
 
 
 
