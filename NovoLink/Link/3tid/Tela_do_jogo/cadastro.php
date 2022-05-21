@@ -55,8 +55,7 @@
 <script src="verificar-senhas.js"></script>
 
 <?php
-
-$conexao = mysqli_connect('localhost', 'root', '', 'projeto');
+include('conexao.php');
 session_start();
 if (isset($_POST["cadastrar"])) {
     // echo "<a href='avatar.php'>
@@ -84,6 +83,7 @@ if (isset($_POST["cadastrar"])) {
 
         $resultB = mysqli_query($conexao, $sqlB);
         echo "<script>alert('usuario cadastrado')</script>";
+        header('location:'."avatar.php");
     } else {
         echo "<script>alert('Email não disponivel')</script>";
     }

@@ -20,7 +20,32 @@
         <h1 class="h1">QUEM MATOU O MÉDICO?</h1>
         <?php
         session_start();
-        $_SESSION['contA'] = 0;
+        $IdNovo = 1;
+        function comecar($IdNovo)
+        {
+    
+            include('conexao.php');
+            $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
+            $relustD = mysqli_query($conexao, $sqlD);
+            $pers = 4;
+            $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
+    
+            $resultP = mysqli_query($conexao, $sqlP);
+    
+    
+    
+    
+            
+                        $_SESSION['IdNovo'] = $IdNovo++;
+                 
+                    echo $IdNovo."<br>".$pers;
+                    $_SESSION['teste'] = 2;
+                
+            }
+        
+    
+        comecar($IdNovo);
+    
         // $nome = $_SESSION['nome'];
         // echo $nome;
         ?>
@@ -33,12 +58,6 @@
                 <div class="pers">
                     <button name="pers1" class="button" id="pers1">
                         <img src="img/ana.svg" alt="">
-                    </button>
-                </div>
-
-                <div class="pers">
-                    <button name="pers2" class="button" id="pers2">
-                        <img src="img/fred.svg" alt=""><br>
                     </button>
                 </div>
 

@@ -59,7 +59,7 @@ session_start();
             </button>
             <button value="d5" id="d5" name="d5">
                 <div class="box1">
-                    <img src="../Tela_do_jogo/detetives/Ukezara.svg" alt="detetive5">
+                    <img src="../Tela_do_jogo/detetives/dtt4.svg" alt="detetive5">
                     <legend>James Ukezara</legend>
                 </div>
             </button>
@@ -72,9 +72,10 @@ session_start();
 
     </div>
     <?php
-
+$_SESSION['contA'] = 0;
     if (isset($_POST['d1'])) {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+        include('conexao.php');
+        
         $detetive = "1";
 
         $nome = $_SESSION['nome'];
@@ -103,7 +104,8 @@ session_start();
 
 
     if (isset($_POST['d2'])) {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+        include('conexao.php');
+        
         $detetive = "2";
 
         $nome = $_SESSION['nome'];
@@ -130,8 +132,8 @@ session_start();
         }
     }
 
-    if (isset($_POST['d3'])) {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+    if (isset($_POST['d3'])) {        include('conexao.php');
+
         $detetive = "3";
 
         $nome = $_SESSION['nome'];
@@ -158,8 +160,8 @@ session_start();
         }
     }
 
-    if (isset($_POST['d4'])) {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+    if (isset($_POST['d4'])) {        include('conexao.php');
+
         $detetive = "4";
 
         $nome = $_SESSION['nome'];
@@ -196,7 +198,8 @@ session_start();
 
 
     if (isset($_POST['d5'])) {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+        include('conexao.php');
+        
         $detetive = "5";
 
         $nome = $_SESSION['nome'];

@@ -14,7 +14,7 @@
     <div class="box">
       <h1>PARABÉNS DETETIVE!</h1>
       <p>Você desvendou o misterio de assassinato e prendeu o assassino!</p><br><br>
-      <a href="tela_jogo2.php">INICIO</a>
+      <a href="tela_jogo2.php">SEGUNDA FASE</a>
     </div>
     
   </body>

@@ -33,7 +33,9 @@
                 <?php
                 session_start();
 
-                $conexao = mysqli_connect("localhost", "root", "", "projeto");
+                include('conexao.php');
+                // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
+
                 $nome = $_SESSION['nome'];
                 $id = $_SESSION['IdUsuario'];
                 $selt = "SELECT * FROM usuario WHERE id ='$id'";
@@ -47,10 +49,13 @@
 
                         $_SESSION['FotoDetetive'] = $linhaDT['FotoDetetive'];
                 ?>
+
                         <button id="myBtn">
-                            <a href="#" class="detetive">
-                                <img src="../Tela_do_jogo/detetives/<?php echo $_SESSION['FotoDetetive'] ?>" alt="">
-                            </a>
+                            <div class="loader">
+                                <a href="#" class="detetive">
+                                    <img src="../Tela_do_jogo/detetives/<?php echo $_SESSION['FotoDetetive'] ?>" alt="">
+                                </a>
+                            </div>
                         </button>
 
 
@@ -102,9 +107,11 @@
     $IdNovo = 1;
     function comecar($IdNovo)
     {
+include('conexao.php');
 
+        
+                // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
 
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
         $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
         $relustD = mysqli_query($conexao, $sqlD);
         $pers = 4;
@@ -157,7 +164,9 @@
 
     function continuar()
     {
-        $conexao = mysqli_connect("localhost", "root", "", "projeto");
+        include('conexao.php');
+                // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
+
         $_SESSION['IdNovo']++;
         $IdC = $_SESSION['IdNovo'];
         $_SESSION['apagarId'] = $IdC;
@@ -199,7 +208,7 @@
                         </div> -->
 
 
-                       
+
 
                     </div>
 
@@ -214,33 +223,35 @@
                     <!-- fim dos dialogos -->
 
                     <section class="sct_palpite1">
+
                         <article>
 
                             <button class="button3" id="myBtn3">Resposta</button>
 
-                            <div id="myModal3" class="modal">
-                                <div class="modal-content">
-                                    <span class="close3">&times;</span>
+                            <div id="myModal3" class="modal2"><span class="close3">&times;</span>
+
+                                <div class="modal-content2">
+
                                     <p>
-                                        - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>                              
+                                        - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>
                                     </p>
                                 </div>
                             </div>
 
-                         <div class="armas">                     
-                         <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
-                         <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
-                         <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
-                         <a href="lost2.php"><button class="arma" id="myBtn3">Pneumotórax</button></a>
-                         <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
-                         <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
-                         </div>
-                            
+                            <div class="armas">
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
+                                <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Pneumotórax</button></a>
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
+                            </div>
+
                         </article>
                     </section>
 
 
-                  
+
     <?php
                 }
             }
@@ -349,8 +360,6 @@
                 modal4.style.display = "none";
             }
         }
-
-
     </script>
 </body>
 
