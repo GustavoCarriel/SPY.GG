@@ -23,29 +23,28 @@
         $IdNovo = 1;
         function comecar($IdNovo)
         {
-    
+
             include('conexao.php');
             $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
             $relustD = mysqli_query($conexao, $sqlD);
             $pers = 4;
             $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
-    
+
             $resultP = mysqli_query($conexao, $sqlP);
-    
-    
-    
-    
-            
-                        $_SESSION['IdNovo'] = $IdNovo++;
-                 
-                    echo $IdNovo."<br>".$pers;
-                    $_SESSION['teste'] = 2;
-                
-            }
-        
-    
+
+
+
+
+
+            $_SESSION['IdNovo'] = $IdNovo++;
+
+            echo $IdNovo . "<br>" . $pers;
+            $_SESSION['teste'] = 2;
+        }
+
+
         comecar($IdNovo);
-    
+
         // $nome = $_SESSION['nome'];
         // echo $nome;
         ?>
@@ -90,7 +89,8 @@
         <?php
         if (isset($_POST['pers1'])) {
 
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 1;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
@@ -108,7 +108,8 @@
         }
 
         if (isset($_POST['pers2'])) {
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 3;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
@@ -129,7 +130,8 @@
 
 
         if (isset($_POST['pers3'])) {
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 5;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
@@ -149,7 +151,8 @@
 
         if (isset($_POST['pers4'])) {
 
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 6;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
@@ -168,7 +171,8 @@
 
 
         if (isset($_POST['pers5'])) {
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 2;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
@@ -187,7 +191,8 @@
 
 
         if (isset($_POST['pers6'])) {
-            $conexao = mysqli_connect("localhost", "root", "", "projeto");
+            include('conexao.php');
+
             $ID = 4;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
             $result = mysqli_query($conexao, $sql);
