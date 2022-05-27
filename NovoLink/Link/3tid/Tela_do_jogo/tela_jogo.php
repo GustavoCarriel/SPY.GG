@@ -26,7 +26,7 @@
 <body>
     <div class="container_all">
         <header>
-           <h1><img src="logodetetive2.png"> Mr's murder</h1>
+            <h1><img src="logodetetive2.png"> Mr's murder</h1>
 
 
 
@@ -98,7 +98,7 @@
                         <button id="myBtn">
                             <div class="loader">
                                 <a href="#" class="detetive">
-                                    <img src="../Tela_do_jogo/detetives/<?php echo $linhaDT['FotoDetetive']?>" alt="">
+                                    <img src="../Tela_do_jogo/detetives/<?php echo $linhaDT['FotoDetetive'] ?>" alt="">
                                 </a>
                             </div>
                         </button>
@@ -162,7 +162,7 @@
     // $relustD = mysqli_query($conexao, $sqlD);
 
     $_SESSION['IdNovo'] == $_SESSION['teste'];
-   
+
     function continuar()
     {
 
@@ -182,138 +182,138 @@
 
             while ($linhaP = mysqli_fetch_array($resultP)) {
 
-         
 
-                    if ($IdC <= 13) {
+
+                if ($IdC <= 13) {
 
 
 
     ?>
-                        <!-- começo dos dialogos -->
-                        <div id="DialogosJogo" class="dialogo-total">
+                    <!-- começo dos dialogos -->
+                    <div id="DialogosJogo" class="dialogo-total">
 
 
-                         
-                            <div class="dialogo-detetive">
-                                <div class="part-detetive">
-                                    <img class="personagens-imagem" src="../Tela_do_jogo/detetives/<?php echo $_SESSION['FOTODETETIVE'] ?>" width="100px" alt="">
-                                    <h3><?php echo $_SESSION['NomeDetetive'] ?></h3>
-                                      <p>Agora eu vou interrogar <span class="nome-dialogo"> <?php echo $linhaP['Nomeperso']; ?></span></p>
-                                </div>
 
-                                <div class="dialogo-continuar">
-                                    <form action="tela_jogo.php" method="post">
-                                        <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
-                                    </form>
-                                </div>
-
+                        <div class="dialogo-detetive">
+                            <div class="part-detetive">
+                                <img class="personagens-imagem" src="../Tela_do_jogo/detetives/<?php echo $_SESSION['FOTODETETIVE'] ?>" width="100px" alt="">
+                                <h3><?php echo $_SESSION['NomeDetetive'] ?></h3>
+                                <p>Agora eu vou interrogar <span class="nome-dialogo"> <?php echo $linhaP['Nomeperso']; ?></span></p>
                             </div>
+
+                            <div class="dialogo-continuar">
+                                <form action="tela_jogo.php" method="post">
+                                    <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
+                                </form>
+                            </div>
+
                         </div>
+                    </div>
 
-                        <div class="dialogo-personagens">
+                    <div class="dialogo-personagens">
 
-                            <img class="personagens-imagem" src="img/<?php echo $linhaP['Fotopersonagem'] ?>" width="100px" alt="">
-                            <div class="personagens-texto">
-                                <h3><?php echo $linhaP['Nomeperso']; ?></h3>
-                                <?php
+                        <img class="personagens-imagem" src="img/<?php echo $linhaP['Fotopersonagem'] ?>" width="100px" alt="">
+                        <div class="personagens-texto">
+                            <h3><?php echo $linhaP['Nomeperso']; ?></h3>
+                            <?php
 
-                                $Fala = explode("$", $linhaC['dialogo']);
-                                $elementos = count($Fala);
-                                for ($indice = 0; $indice < $elementos; $indice++) {
-                                    if ($Fala[$indice] == "pers1") {
-                                        $sqlP1 = "SELECT * FROM personagens WHERE IdDial = 1";
-                                        $resultP1 = mysqli_query($conexao, $sqlP1);
-                                        while ($linhaP1 = mysqli_fetch_array($resultP1)) {
-                                            $Fala[$indice] = $linhaP1['Nomeperso'];
-                                        }
-                                    } else if ($Fala[$indice] == "pers2") {
-
-                                        $sqlP2 = "SELECT * FROM personagens WHERE IdDial = 2";
-                                        $resultP2 = mysqli_query($conexao, $sqlP2);
-                                        while ($linhaP2 = mysqli_fetch_array($resultP2)) {
-                                            $Fala[$indice] = $linhaP2['Nomeperso'];
-                                        }
-                                    } else if ($Fala[$indice] == "pers3") {
-
-                                        $sqlP3 = "SELECT * FROM personagens WHERE IdDial = 3";
-                                        $resultP3 = mysqli_query($conexao, $sqlP3);
-                                        while ($linhaP3 = mysqli_fetch_array($resultP3)) {
-                                            $Fala[$indice] = $linhaP3['Nomeperso'];
-                                        }
-                                    } else if ($Fala[$indice] == "pers4") {
-
-                                        $sqlP4 = "SELECT * FROM personagens WHERE IdDial = 4";
-                                        $resultP4 = mysqli_query($conexao, $sqlP4);
-                                        while ($linhaP4 = mysqli_fetch_array($resultP4)) {
-                                            $Fala[$indice] = $linhaP4['Nomeperso'];
-                                        }
-                                    } else if ($Fala[$indice] == "pers5") {
-
-                                        $sqlP5 = "SELECT * FROM personagens WHERE IdDial = 5";
-                                        $resultP5 = mysqli_query($conexao, $sqlP5);
-                                        while ($linhaP5 = mysqli_fetch_array($resultP5)) {
-                                            $Fala[$indice] = $linhaP5['Nomeperso'];
-                                        }
-                                    } else if ($Fala[$indice] == "pers6") {
-
-                                        $sqlP6 = "SELECT * FROM personagens WHERE IdDial = 6";
-                                        $resultP6 = mysqli_query($conexao, $sqlP6);
-                                        while ($linhaP6 = mysqli_fetch_array($resultP6)) {
-                                            $Fala[$indice] = $linhaP6['Nomeperso'];
-                                        }
+                            $Fala = explode("$", $linhaC['dialogo']);
+                            $elementos = count($Fala);
+                            for ($indice = 0; $indice < $elementos; $indice++) {
+                                if ($Fala[$indice] == "pers1") {
+                                    $sqlP1 = "SELECT * FROM personagens WHERE IdDial = 1";
+                                    $resultP1 = mysqli_query($conexao, $sqlP1);
+                                    while ($linhaP1 = mysqli_fetch_array($resultP1)) {
+                                        $Fala[$indice] = $linhaP1['Nomeperso'];
                                     }
+                                } else if ($Fala[$indice] == "pers2") {
 
+                                    $sqlP2 = "SELECT * FROM personagens WHERE IdDial = 2";
+                                    $resultP2 = mysqli_query($conexao, $sqlP2);
+                                    while ($linhaP2 = mysqli_fetch_array($resultP2)) {
+                                        $Fala[$indice] = $linhaP2['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers3") {
 
+                                    $sqlP3 = "SELECT * FROM personagens WHERE IdDial = 3";
+                                    $resultP3 = mysqli_query($conexao, $sqlP3);
+                                    while ($linhaP3 = mysqli_fetch_array($resultP3)) {
+                                        $Fala[$indice] = $linhaP3['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers4") {
 
+                                    $sqlP4 = "SELECT * FROM personagens WHERE IdDial = 4";
+                                    $resultP4 = mysqli_query($conexao, $sqlP4);
+                                    while ($linhaP4 = mysqli_fetch_array($resultP4)) {
+                                        $Fala[$indice] = $linhaP4['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers5") {
 
-                                ?>
-                                    <?php echo  $Fala[$indice]; ?>
-                                <?php
+                                    $sqlP5 = "SELECT * FROM personagens WHERE IdDial = 5";
+                                    $resultP5 = mysqli_query($conexao, $sqlP5);
+                                    while ($linhaP5 = mysqli_fetch_array($resultP5)) {
+                                        $Fala[$indice] = $linhaP5['Nomeperso'];
+                                    }
+                                } else if ($Fala[$indice] == "pers6") {
+
+                                    $sqlP6 = "SELECT * FROM personagens WHERE IdDial = 6";
+                                    $resultP6 = mysqli_query($conexao, $sqlP6);
+                                    while ($linhaP6 = mysqli_fetch_array($resultP6)) {
+                                        $Fala[$indice] = $linhaP6['Nomeperso'];
+                                    }
                                 }
-                                ?>
-                                
-                            </div>
 
 
 
 
-
-                        </div>
-
-                        <div class="btn_dicas">
-
-
-                            <button class="button1" id="myBtn3">Historico</button>
-                        </div>
-
-
-                        <!-- fim dos dialogos -->
-                    <?php
-
-                    }
-                    if ($IdC == 14) {
-
-                    ?>
-                        <form action="question.php" method="post">
-                            <img class="personagens-imagem" src="../Tela_do_jogo/detetives/Narrador.svg" width="100px" style="overflow: hidden;" alt="">
-
-                            <div class="personagens-texto">
-                                <h3>Misterio</h3>
-                                <p>Agora você irá escolher quem é o culpado do assasinato de Fred.</p>
-                            </div>
-                            <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
-                        </form><?php
-
-
+                            ?>
+                                <?php echo  $Fala[$indice]; ?>
+                            <?php
                             }
-                    
+                            ?>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="btn_dicas">
+
+
+                        <button class="button1" id="myBtn3">Historico</button>
+                    </div>
+
+
+                    <!-- fim dos dialogos -->
+                <?php
+
+                }
+                if ($IdC == 14) {
+
+                ?>
+                    <form action="question.php" method="post">
+                        <img class="personagens-imagem" src="../Tela_do_jogo/detetives/Narrador.svg" width="100px" style="overflow: hidden;" alt="">
+
+                        <div class="personagens-texto">
+                            <h3>Misterio</h3>
+                            <p>Agora você irá escolher quem é o culpado do assasinato de Fred.</p>
+                        </div>
+                        <input type="submit" class="botao" name="continuar" id="continuar" value="Continuar">
+                    </form><?php
+
+
+                        }
+
                         // if($IdC =10){
                         //     echo"ssss";
                         // }
                     }
                 }
 
-                                ?>
+                            ?>
 
 
 </section>
@@ -390,7 +390,7 @@
 
                     ?>
 
-<?php echo $Fala[$indice]; ?>
+                        <?php echo $Fala[$indice]; ?>
                     <?php
                     }
                     ?>
@@ -418,11 +418,11 @@
             <div class="modal-content">
                 <span class="close2">&times;</span>
                 <p>
-                   <p> - Selecione uma testemunha da esquerda para a direita e arraste para o campo verde ou vermelho.<br></p>
-                   <p> - O campo vermelho será usado para separar os suspeitos entre as testemunhas. <br></p>
-                   <p> - O campo verde sará usado para separar os inocentes entre as testemunhas.<br></p>
-                   <p> - Use esse recurso como seu diario de investigação.</p>
-                   <p> - Esse recurso só será desbloqueado na útilma pista.</p>
+                <p> - Selecione uma testemunha da esquerda para a direita e arraste para o campo verde ou vermelho.<br></p>
+                <p> - O campo vermelho será usado para separar os suspeitos entre as testemunhas. <br></p>
+                <p> - O campo verde sará usado para separar os inocentes entre as testemunhas.<br></p>
+                <p> - Use esse recurso como seu diario de investigação.</p>
+                <p> - Esse recurso só será desbloqueado na útilma pista.</p>
 
                 </p>
             </div>
@@ -457,7 +457,7 @@
     </div>
 
 <?php
-        } 
+        }
 ?>
 
 

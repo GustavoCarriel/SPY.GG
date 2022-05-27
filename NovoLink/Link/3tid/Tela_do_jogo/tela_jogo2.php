@@ -32,6 +32,7 @@
                 <?php
                 session_start();
 
+
                 include('conexao.php');
                 // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
 
@@ -75,22 +76,33 @@
                 </div>
                 <div class="modal-body">
                     <p>Nesse caso o detetive <?php echo $linhaDT['NomeDetetive']; ?> vai ter que descobrir que matou o medico Fred</p>
-                    
-                    <!-- teste -->
-                    <br>
-                    <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
-                    </p><br>
-                    <p> Patricia a recepcionista, aguardava o seu plantão encerrar, conversando com a médica Meredith que havia colocado o paciente Joseph em uma das alas, após o passeio noturno no Jardim. Na cozinha, o guarda João se preparava para retomar seu posto no hospital, após uma pausa para o lanche. No andar de cima, o médico Fred analisava seus prontuários.
-                    </p>
-                    <p> <br>
-                        Tudo estava calmo e estranho, na televisão um temporal anunciava chegar entre 00:00 e 01:00, todos os funcionários foram de preparo fechar todas as portas, janelas, seria uma noite daquelas na clínica, entretanto algo saiu fora do esperado, alguém acionou o botão de incêndio de emergência, este que abria as alas de todos os pacientes , todos os funcionários foram de imediato fechar as portas das alas, antes que a clínica virasse uma loucura, todos se dividiram, pois haviam portas no andar de cima e no andar de baixo. Após o ocorrido, a recepcionista Patricia perguntou aos outros se haviam visto Fred, pois ele estava com a ficha de todos os pacientes de cada dia.
-                    </p>
-                    <p> <br>
-                        Um silêncio ecoou entre entre o andar principal da clínica, até que Meredith veio de encontro ofegante, dizer que Joseph não estava, em sua ala, todos correram para encontrá-lo procurando pela clínica, as câmeras estavam em manutenção, o que dificultava achá-lo.
-                    </p>
-                    <p> <br>
-                        Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
-                    </p>
+                    <?php
+
+                        if ($historia == 1) {
+
+                    ?>
+                        <!-- teste -->
+                        <br>
+                        <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
+                        </p><br>
+                        <p> Patricia a recepcionista, aguardava o seu plantão encerrar, conversando com a médica Meredith que havia colocado o paciente Joseph em uma das alas, após o passeio noturno no Jardim. Na cozinha, o guarda João se preparava para retomar seu posto no hospital, após uma pausa para o lanche. No andar de cima, o médico Fred analisava seus prontuários.
+                        </p>
+                        <p> <br>
+                            Tudo estava calmo e estranho, na televisão um temporal anunciava chegar entre 00:00 e 01:00, todos os funcionários foram de preparo fechar todas as portas, janelas, seria uma noite daquelas na clínica, entretanto algo saiu fora do esperado, alguém acionou o botão de incêndio de emergência, este que abria as alas de todos os pacientes , todos os funcionários foram de imediato fechar as portas das alas, antes que a clínica virasse uma loucura, todos se dividiram, pois haviam portas no andar de cima e no andar de baixo. Após o ocorrido, a recepcionista Patricia perguntou aos outros se haviam visto Fred, pois ele estava com a ficha de todos os pacientes de cada dia.
+                        </p>
+                        <p> <br>
+                            Um silêncio ecoou entre entre o andar principal da clínica, até que Meredith veio de encontro ofegante, dizer que Joseph não estava, em sua ala, todos correram para encontrá-lo procurando pela clínica, as câmeras estavam em manutenção, o que dificultava achá-lo.
+                        </p>
+                        <p> <br>
+                            Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
+                        </p>
+                    <?php
+
+                        }
+
+                        if ($historia == 2) {
+                            echo "historia 2";
+                        } ?>
                 </div>
                 <div class="modal-footer">
                     <h2>Jogador: <?php echo $linha['nome']; ?></h2>
@@ -109,12 +121,12 @@
 ?>
 <section class="sct_dialogo">
 
-<?php
-   
+    <?php
+
     function continuar()
     {
         include('conexao.php');
-                // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
+        // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
 
         $_SESSION['IdNovo']++;
         $IdC = $_SESSION['IdNovo'];
@@ -130,29 +142,29 @@
 
             while ($linhaP = mysqli_fetch_array($resultP)) {
 
-                
-                ?>
+
+    ?>
 
 
-                    <button class="button2" id="myBtn2">Instruções</button>
+                <button class="button2" id="myBtn2">Instruções</button>
 
-                    <div id="myModal2" class="modal">
-                        <div class="modal-content">
-                            <span class="close2">&times;</span>
-                            <p>
-                                <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
-                                - Com o cursor do mouse, passe-o sobre as imagens. <br>
-                                - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
-                                - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
-                            </p>
-                        </div>
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close2">&times;</span>
+                        <p>
+                        <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
+                        - Com o cursor do mouse, passe-o sobre as imagens. <br>
+                        - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
+                        - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
+                        </p>
                     </div>
-                    </article>
+                </div>
+                </article>
 
-                    <!-- começo dos dialogos -->
-                    <div id="DialogosJogo" class="dialogo-total">
+                <!-- começo dos dialogos -->
+                <div id="DialogosJogo" class="dialogo-total">
 
-                        <!-- 
+                    <!-- 
                         <div class="contador">
                             <h4><?php echo $IdC; ?> /13</h4>
                         </div> -->
@@ -160,56 +172,56 @@
 
 
 
-                    </div>
+                </div>
 
-                    <ul id="album-fotos">
-                        <li id="foto01"><span> Injeção de Ar?<br> Ao encher uma seringa com ar e injetar em uma artéria, isso causará um coágulo, interrompendo a circulação sanguínea deixando o tecido sem oxigênio. </span></li>
-                        <li id="foto02"><span> Lençol?<br> Ao cobrir as passagens de ar com um pano, o sufocamento ocorrerá em poucos minutos, isso deixará o individúo inconciente.</span></li>
-                        <li id="foto03"><span> Overdose? <br> Ao usar um alta dosagem de alguma substância, lícita ou ilícita, isso causará o sobrecarregamento do corpo, podendo ocasionar na morte.</span></li>
-                        <li id="foto04"><span> Envenenamento? <br> Ao ingerir uma substâcia toxica, vira oral ou nasal,em pucos minutos os efeitos colaterais começarão a aparecer, como naúseas e desmaio. </span></li>
-                        <li id="foto05"><span> Enforcamento? <br>Ao interromper a circulação e ar pela traqueia, isso deixará o invidúo inconciente e em pouco minutos isso ocasionará na morte do mesmo.</span></li>
-                        <li id="foto06"><span> Fratura no Cerebelo?<br> Dependendo da intensidade da lesão no cerebelo, seu resultado pode causar um sequela permanete ou até ocasionar em morte.</span></li>
-                    </ul>
-                    <!-- fim dos dialogos -->
+                <ul id="album-fotos">
+                    <li id="foto01"><span> Injeção de Ar?<br> Ao encher uma seringa com ar e injetar em uma artéria, isso causará um coágulo, interrompendo a circulação sanguínea deixando o tecido sem oxigênio. </span></li>
+                    <li id="foto02"><span> Lençol?<br> Ao cobrir as passagens de ar com um pano, o sufocamento ocorrerá em poucos minutos, isso deixará o individúo inconciente.</span></li>
+                    <li id="foto03"><span> Overdose? <br> Ao usar um alta dosagem de alguma substância, lícita ou ilícita, isso causará o sobrecarregamento do corpo, podendo ocasionar na morte.</span></li>
+                    <li id="foto04"><span> Envenenamento? <br> Ao ingerir uma substâcia toxica, vira oral ou nasal,em pucos minutos os efeitos colaterais começarão a aparecer, como naúseas e desmaio. </span></li>
+                    <li id="foto05"><span> Enforcamento? <br>Ao interromper a circulação e ar pela traqueia, isso deixará o invidúo inconciente e em pouco minutos isso ocasionará na morte do mesmo.</span></li>
+                    <li id="foto06"><span> Fratura no Cerebelo?<br> Dependendo da intensidade da lesão no cerebelo, seu resultado pode causar um sequela permanete ou até ocasionar em morte.</span></li>
+                </ul>
+                <!-- fim dos dialogos -->
 
-                    <section class="sct_palpite1">
+                <section class="sct_palpite1">
 
-                        <article>
+                    <article>
 
-                            <button class="button3" id="myBtn3">Resposta</button>
+                        <button class="button3" id="myBtn3">Resposta</button>
 
-                            <div id="myModal3" class="modal2"><span class="close3">&times;</span>
+                        <div id="myModal3" class="modal2"><span class="close3">&times;</span>
 
-                                <div class="modal-content2">
+                            <div class="modal-content2">
 
-                                    <p>
-                                        - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>
-                                    </p>
-                                </div>
+                                <p>
+                                    - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>
+                                </p>
                             </div>
+                        </div>
 
-                            <div class="armas">
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
-                                <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
-                            </div>
+                        <div class="armas">
+                            <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
+                            <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
+                        </div>
 
-                        </article>
-                    </section>
+                    </article>
+                </section>
 
 
 
     <?php
-                }
             }
-        
+        }
     }
 
 
     continuar();
+
 
     ?>
 

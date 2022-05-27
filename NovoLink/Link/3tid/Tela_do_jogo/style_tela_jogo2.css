@@ -100,11 +100,12 @@ header h1 {
     align-items: center;
 }
 
-header h1 img{
-margin-left: 20px;
-height: 95px;
-width: 95px;
+header h1 img {
+    margin-left: 20px;
+    height: 95px;
+    width: 95px;
 }
+
 header .image img {
     height: 35px;
     margin: .7rem;
@@ -207,8 +208,6 @@ header .image .detetive img {
     color: #fff;
     background-color: rgba(74, 74, 74, 0.9);
 }
-
-.modal2 p {}
 
 
 /* Modal Content */
@@ -366,8 +365,8 @@ header .image .detetive img {
     width: 90%;
     height: 80vh;
     padding: 2%;
-    padding-left:10%;
-    padding-top:3%;
+    padding-left: 10%;
+    padding-top: 3%;
     margin: 5vh 5%;
     backdrop-filter: blur(50px);
     /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
@@ -377,7 +376,7 @@ header .image .detetive img {
 
 .sct_palpite {
     grid-area: right;
-    border: 3px solid  #bebebe;
+    border: 3px solid #bebebe;
     box-shadow: 0 0 10px #bebebe;
     border-radius: 20px;
     height: 80vh;
@@ -554,7 +553,6 @@ header .image .detetive img {
     display: flex;
 }
 
-
 ul#album-fotos li {
     padding-right: 5px;
     margin-left: 5%;
@@ -580,7 +578,7 @@ ul#album-fotos li span {
     line-height: 30px;
     font-size: 10pt;
     padding: 5px;
-    padding-left:2%;
+    padding-left: 2%;
 }
 
 ul#album-fotos li:hover {
@@ -589,12 +587,9 @@ ul#album-fotos li:hover {
     -webkit-transition: all 0.4s ease-in;
 }
 
-
 ul#album-fotos li:hover span {
     opacity: 1;
 }
-
-
 
 li#foto01 {
     background-image: url('../Tela_do_jogo/seringa.jpg');
@@ -603,13 +598,11 @@ li#foto01 {
     background-color: white;
 }
 
-
 ul#album-fotos li#foto01:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
-
 
 li#foto02 {
     background-image: url('../Tela_do_jogo/cama.jpg');
@@ -621,7 +614,7 @@ li#foto02 {
 ul#album-fotos li#foto02:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-     background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
 
 li#foto03 {
@@ -634,7 +627,7 @@ li#foto03 {
 ul#album-fotos li#foto03:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
 
 li#foto04 {
@@ -647,7 +640,7 @@ li#foto04 {
 ul#album-fotos li#foto04:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-       background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
 
 li#foto05 {
@@ -660,7 +653,7 @@ li#foto05 {
 ul#album-fotos li#foto05:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-       background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
 
 li#foto06 {
@@ -673,7 +666,7 @@ li#foto06 {
 ul#album-fotos li#foto06:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-       background-image:linear-gradient(#8B0000,#363636);
+    background-image: linear-gradient(#8B0000, #363636);
 }
 
 .armas {

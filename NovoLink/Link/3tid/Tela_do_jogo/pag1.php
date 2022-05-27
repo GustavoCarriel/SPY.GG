@@ -185,30 +185,29 @@ while ($linhaR = mysqli_fetch_array($resultR5)) {
 
 
 $IdNovo = 1;
-    function comecar($IdNovo)
-    {
+function comecar($IdNovo)
+{
 
-        include('conexao.php');
-        $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
-        $relustD = mysqli_query($conexao, $sqlD);
-        $pers = 4;
-        $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
+    include('conexao.php');
+    $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
+    $relustD = mysqli_query($conexao, $sqlD);
+    $pers = 4;
+    $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
 
-        $resultP = mysqli_query($conexao, $sqlP);
-
-
+    $resultP = mysqli_query($conexao, $sqlP);
 
 
-        
-                    $_SESSION['IdNovo'] = $IdNovo++;
-             
-                echo $IdNovo."<br>".$pers;
-                $_SESSION['teste'] = 2;
-            
-        }
-    
 
-    comecar($IdNovo);
+
+
+    $_SESSION['IdNovo'] = $IdNovo++;
+
+    echo $IdNovo . "<br>" . $pers;
+    $_SESSION['teste'] = 2;
+}
+
+
+comecar($IdNovo);
 
 
 
@@ -239,7 +238,7 @@ if (isset($_POST["logar"])) {
                 if ($Senha == $linha['senha']) {
                     $_SESSION['nome'] = $linha['nome'];
                     $_SESSION['IdUsuario'] = $linha['id'];
-                    header('location:' ."tela_jogo.php");
+                    header('location:' . "tela_jogo.php");
                 } else {
                     echo "<script>alert('senha incorreta')</script>";
                 }

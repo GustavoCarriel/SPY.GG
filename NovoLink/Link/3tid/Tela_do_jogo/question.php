@@ -23,29 +23,28 @@
         $IdNovo = 1;
         function comecar($IdNovo)
         {
-    
+
             include('conexao.php');
             $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
             $relustD = mysqli_query($conexao, $sqlD);
             $pers = 4;
             $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
-    
+
             $resultP = mysqli_query($conexao, $sqlP);
-    
-    
-    
-    
-            
-                        $_SESSION['IdNovo'] = $IdNovo++;
-                 
-                    echo $IdNovo."<br>".$pers;
-                    $_SESSION['teste'] = 2;
-                
-            }
-        
-    
+
+
+
+
+
+            $_SESSION['IdNovo'] = $IdNovo++;
+
+
+            $_SESSION['teste'] = 2;
+        }
+
+
         comecar($IdNovo);
-    
+
         // $nome = $_SESSION['nome'];
         // echo $nome;
         ?>
@@ -89,7 +88,7 @@
 
         <?php
         if (isset($_POST['pers1'])) {
-                include('conexao.php');
+            include('conexao.php');
 
             $ID = 1;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -107,7 +106,8 @@
             }
         }
 
-        if (isset($_POST['pers2'])) {                include('conexao.php');
+        if (isset($_POST['pers2'])) {
+            include('conexao.php');
 
             $ID = 3;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -128,7 +128,8 @@
 
 
 
-        if (isset($_POST['pers3'])) {                include('conexao.php');
+        if (isset($_POST['pers3'])) {
+            include('conexao.php');
 
             $ID = 5;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -149,7 +150,7 @@
 
         if (isset($_POST['pers4'])) {
 
-                       include('conexao.php');
+            include('conexao.php');
 
             $ID = 6;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -169,7 +170,7 @@
 
 
         if (isset($_POST['pers5'])) {
-                include('conexao.php');
+            include('conexao.php');
 
             $ID = 2;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -188,7 +189,8 @@
         }
 
 
-        if (isset($_POST['pers6'])) {                include('conexao.php');
+        if (isset($_POST['pers6'])) {
+            include('conexao.php');
 
             $ID = 4;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
