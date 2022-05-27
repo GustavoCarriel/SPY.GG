@@ -73,6 +73,33 @@ session_start();
     </div>
     <?php
 $_SESSION['contA'] = 0;
+
+$IdNovo = 1;
+    function comecar($IdNovo)
+    {
+
+        include('conexao.php');
+        $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
+        $relustD = mysqli_query($conexao, $sqlD);
+        $pers = 4;
+        $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
+
+        $resultP = mysqli_query($conexao, $sqlP);
+
+
+
+
+        
+                    $_SESSION['IdNovo'] = $IdNovo++;
+             
+                echo $IdNovo."<br>".$pers;
+                $_SESSION['teste'] = 2;
+            
+        }
+    
+
+    comecar($IdNovo);
+
     if (isset($_POST['d1'])) {
         include('conexao.php');
         
@@ -92,7 +119,7 @@ $_SESSION['contA'] = 0;
             if ($result) {
     ?>
                 <div class="cont">
-                <button class="p"><a href="tela_jogo.php"> Play</a>
+                <button class="p"><a href="loading.html"> Play</a>
                     </button>
                 </div>
             <?php
@@ -122,7 +149,7 @@ $_SESSION['contA'] = 0;
             if ($result) {
             ?>
                 <div class="cont">
-                <button class="p"><a href="tela_jogo.php"> Play</a>
+                <button class="p"><a href="loading.html"> Play</a>
                     </button>
                 </div>
             <?php
@@ -150,7 +177,7 @@ $_SESSION['contA'] = 0;
             if ($result) {
             ?>
                 <div class="cont">
-                <button class="p"><a href="tela_jogo.php"> Play</a>
+                <button class="p"><a href="loading.html"> Play</a>
                     </button>
                 </div>
             <?php
@@ -184,7 +211,7 @@ $_SESSION['contA'] = 0;
 
             ?>
                 <div class="cont">
-                    <button class="p"><a href="tela_jogo.php"> Play</a>
+                    <button class="p"><a href="loading.html"> Play</a>
                     </button>
                 </div>
     <?php
@@ -216,7 +243,7 @@ $_SESSION['contA'] = 0;
             if ($result) {
     ?>
                 <div class="cont">
-                <button class="p"><a href="tela_jogo.php"> Play</a>
+                <button class="p"><a href="loading.html"> Play</a>
                     </button>
                 </div>
             <?php

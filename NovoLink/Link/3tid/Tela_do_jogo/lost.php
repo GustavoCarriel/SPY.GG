@@ -2,31 +2,7 @@
 <?php
 session_start();
 
-$IdNovo = 1;
-    function comecar($IdNovo)
-    {
-
-        include('conexao.php');
-        $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
-        $relustD = mysqli_query($conexao, $sqlD);
-        $pers = 4;
-        $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
-
-        $resultP = mysqli_query($conexao, $sqlP);
-
-
-
-
-        
-                    $_SESSION['IdNovo'] = $IdNovo++;
-             
-                echo $IdNovo."<br>".$pers;
-                $_SESSION['teste'] = 2;
-            
-        }
-    
-
-    comecar($IdNovo);
+$_SESSION['contA'] = 0;
 
 ?>
 <html lang="pt-BR">

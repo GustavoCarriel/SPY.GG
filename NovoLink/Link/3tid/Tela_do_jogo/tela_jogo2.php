@@ -18,14 +18,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title>M's murder</title>
+    <title>Mr's murder</title>
 </head>
 
 <body>
     <div class="container_all">
         <header>
-            <h1>M's murder</h1>
-
+            <h1><img src="logodetetive2.png"> Mr's murder</h1>
 
 
             <div class="image">
@@ -76,10 +75,22 @@
                 </div>
                 <div class="modal-body">
                     <p>Nesse caso o detetive <?php echo $linhaDT['NomeDetetive']; ?> vai ter que descobrir que matou o medico Fred</p>
+                    
                     <!-- teste -->
                     <br>
-                    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error nesciunt dicta. Pariatur ut assumenda porro dignissimos, voluptatem soluta? Voluptates atque ut officia incidunt odio perspiciatis reprehenderit expedita, sed itaque!</span><br><span>Officia omnis iusto beatae dolorum? Corrupti voluptatum ullam dicta aliquam dolore, et fuga adipisci itaque velit vero blanditiis officia, mollitia voluptatem consectetur ipsum eius? Neque in pariatur similique placeat atque!</span><br><span>Voluptatum cumque a, suscipit fugit inventore ut eaque hic corporis nostrum vel repellat minima, eligendi explicabo tenetur et perspiciatis! Perspiciatis et facere cum doloribus commodi. Dolorem hic labore nesciunt itaque.</span><br></p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae iure maiores doloremque recusandae? Corporis, numquam dolor. A nesciunt officia harum, iste expedita non consequuntur excepturi animi repudiandae aut odio laboriosam.
-                    <!-- teste -->
+                    <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
+                    </p><br>
+                    <p> Patricia a recepcionista, aguardava o seu plantão encerrar, conversando com a médica Meredith que havia colocado o paciente Joseph em uma das alas, após o passeio noturno no Jardim. Na cozinha, o guarda João se preparava para retomar seu posto no hospital, após uma pausa para o lanche. No andar de cima, o médico Fred analisava seus prontuários.
+                    </p>
+                    <p> <br>
+                        Tudo estava calmo e estranho, na televisão um temporal anunciava chegar entre 00:00 e 01:00, todos os funcionários foram de preparo fechar todas as portas, janelas, seria uma noite daquelas na clínica, entretanto algo saiu fora do esperado, alguém acionou o botão de incêndio de emergência, este que abria as alas de todos os pacientes , todos os funcionários foram de imediato fechar as portas das alas, antes que a clínica virasse uma loucura, todos se dividiram, pois haviam portas no andar de cima e no andar de baixo. Após o ocorrido, a recepcionista Patricia perguntou aos outros se haviam visto Fred, pois ele estava com a ficha de todos os pacientes de cada dia.
+                    </p>
+                    <p> <br>
+                        Um silêncio ecoou entre entre o andar principal da clínica, até que Meredith veio de encontro ofegante, dizer que Joseph não estava, em sua ala, todos correram para encontrá-lo procurando pela clínica, as câmeras estavam em manutenção, o que dificultava achá-lo.
+                    </p>
+                    <p> <br>
+                        Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <h2>Jogador: <?php echo $linha['nome']; ?></h2>
@@ -98,70 +109,8 @@
 ?>
 <section class="sct_dialogo">
 
-
-    <?php
-
-
-    // $sqlD = "SELECT * FROM dialogos";
-    // $relustD = mysqli_query($conexao, $sqlD);
-    $IdNovo = 1;
-    function comecar($IdNovo)
-    {
-include('conexao.php');
-
-        
-                // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
-
-        $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
-        $relustD = mysqli_query($conexao, $sqlD);
-        $pers = 4;
-        $sqlP = "SELECT * FROM personagens WHERE Idpersonagem =$pers ";
-        $resultP = mysqli_query($conexao, $sqlP);
-        while ($linhaJogo = mysqli_fetch_array($relustD)) {
-
-            while ($linhaP = mysqli_fetch_array($resultP)) {
-
-                $_SESSION['idDialogo'] = $linhaJogo['IdDialogo'];
-
-
-    ?>
-
-                <?php
-                $contA = $_SESSION['contA'];
-                // $contA = 0;
-                if ($contA == 0) {
-                    $contA++;
-                    $_SESSION['contA'] = $contA;
-
-
-                ?>
-
-
-                    <div class=" container">
-                        <form action='' method='post'>
-                            <img class="personagens-imagem" src="../Tela_do_jogo/detetives/Narrador.svg" width="100px" style="overflow: hidden;" alt="">
-
-                            <div class="personagens-texto">
-                                <h3>Misterio</h3>
-                                <p>Ola é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime por Assasino.</p>
-                            </div>
-
-                            <input type='submit' class="botao" name='comecar' id='comecar' value='comecar'>
-                        </form>
-                    </div>
-                <?php
-                }
-                if (isset($_POST['comecar'])) {
-                    $_SESSION['IdNovo'] = $IdNovo;
-                    $_SESSION['pers'] = $pers;
-                }
-            }
-        }
-    }
-
-    comecar($IdNovo);
-
-
+<?php
+   
     function continuar()
     {
         include('conexao.php');
@@ -181,7 +130,7 @@ include('conexao.php');
 
             while ($linhaP = mysqli_fetch_array($resultP)) {
 
-                if ($IdC <= 2) {
+                
                 ?>
 
 
@@ -191,9 +140,10 @@ include('conexao.php');
                         <div class="modal-content">
                             <span class="close2">&times;</span>
                             <p>
-                                - Com o cursor do mouse, arraste-o sobre os quadrados. <br>
-                                - Os quadrados indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
-                                - Com essas descrições, descruba qual foi a arma usada ou a causa da morte da vitíma.
+                                <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
+                                - Com o cursor do mouse, passe-o sobre as imagens. <br>
+                                - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
+                                - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
                             </p>
                         </div>
                     </div>
@@ -210,16 +160,13 @@ include('conexao.php');
 
 
 
-                        
-
-
                     </div>
 
                     <ul id="album-fotos">
                         <li id="foto01"><span> Injeção de Ar?<br> Ao encher uma seringa com ar e injetar em uma artéria, isso causará um coágulo, interrompendo a circulação sanguínea deixando o tecido sem oxigênio. </span></li>
                         <li id="foto02"><span> Lençol?<br> Ao cobrir as passagens de ar com um pano, o sufocamento ocorrerá em poucos minutos, isso deixará o individúo inconciente.</span></li>
                         <li id="foto03"><span> Overdose? <br> Ao usar um alta dosagem de alguma substância, lícita ou ilícita, isso causará o sobrecarregamento do corpo, podendo ocasionar na morte.</span></li>
-                        <li id="foto04"><span> Pneumotórax? <br> O pneumotórax é provocado pela ruptura causada por uma bolha de ar em uma pequena área debilitada do pulmão</span></li>
+                        <li id="foto04"><span> Envenenamento? <br> Ao ingerir uma substâcia toxica, vira oral ou nasal,em pucos minutos os efeitos colaterais começarão a aparecer, como naúseas e desmaio. </span></li>
                         <li id="foto05"><span> Enforcamento? <br>Ao interromper a circulação e ar pela traqueia, isso deixará o invidúo inconciente e em pouco minutos isso ocasionará na morte do mesmo.</span></li>
                         <li id="foto06"><span> Fratura no Cerebelo?<br> Dependendo da intensidade da lesão no cerebelo, seu resultado pode causar um sequela permanete ou até ocasionar em morte.</span></li>
                     </ul>
@@ -245,7 +192,7 @@ include('conexao.php');
                                 <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
                                 <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
                                 <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
-                                <a href="lost2.php"><button class="arma" id="myBtn3">Pneumotórax</button></a>
+                                <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
                                 <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
                                 <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
                             </div>
@@ -258,7 +205,7 @@ include('conexao.php');
     <?php
                 }
             }
-        }
+        
     }
 
 

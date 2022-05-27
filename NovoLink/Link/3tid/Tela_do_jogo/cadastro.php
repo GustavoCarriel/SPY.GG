@@ -44,7 +44,7 @@
         <div class="cad-log">
             <div>
                 <h3>Ja possui Cadastro?</h3>
-                <a href="login.php">Login</a>
+                <a href="pag1.php">Login</a>
             </div>
         </div>
     </main>

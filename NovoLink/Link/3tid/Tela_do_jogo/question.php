@@ -23,28 +23,29 @@
         $IdNovo = 1;
         function comecar($IdNovo)
         {
-
+    
             include('conexao.php');
             $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdNovo";
             $relustD = mysqli_query($conexao, $sqlD);
             $pers = 4;
             $sqlP = "SELECT * FROM personagens WHERE IdDial =$pers ";
-
+    
             $resultP = mysqli_query($conexao, $sqlP);
-
-
-
-
-
-            $_SESSION['IdNovo'] = $IdNovo++;
-
-            echo $IdNovo . "<br>" . $pers;
-            $_SESSION['teste'] = 2;
-        }
-
-
+    
+    
+    
+    
+            
+                        $_SESSION['IdNovo'] = $IdNovo++;
+                 
+                    echo $IdNovo."<br>".$pers;
+                    $_SESSION['teste'] = 2;
+                
+            }
+        
+    
         comecar($IdNovo);
-
+    
         // $nome = $_SESSION['nome'];
         // echo $nome;
         ?>
@@ -56,19 +57,19 @@
 
                 <div class="pers">
                     <button name="pers1" class="button" id="pers1">
-                        <img src="img/ana.svg" alt="">
+                        <img src="img/Ana.svg" alt="">
                     </button>
                 </div>
 
                 <div class="pers">
                     <button name="pers3" class="button" id="pers3">
-                        <img src="img/joao.svg" alt=""><br>
+                        <img src="img/Joao.svg" alt=""><br>
                     </button>
                 </div>
 
                 <div class="pers">
                     <button name="pers4" class="button" id="pers4">
-                        <img src="img/joseph.svg" alt=""><br>
+                        <img src="img/Joseph.svg" alt=""><br>
                     </button>
                 </div>
 
@@ -88,8 +89,7 @@
 
         <?php
         if (isset($_POST['pers1'])) {
-
-            include('conexao.php');
+                include('conexao.php');
 
             $ID = 1;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -107,8 +107,7 @@
             }
         }
 
-        if (isset($_POST['pers2'])) {
-            include('conexao.php');
+        if (isset($_POST['pers2'])) {                include('conexao.php');
 
             $ID = 3;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -129,8 +128,7 @@
 
 
 
-        if (isset($_POST['pers3'])) {
-            include('conexao.php');
+        if (isset($_POST['pers3'])) {                include('conexao.php');
 
             $ID = 5;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -151,7 +149,7 @@
 
         if (isset($_POST['pers4'])) {
 
-            include('conexao.php');
+                       include('conexao.php');
 
             $ID = 6;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -171,7 +169,7 @@
 
 
         if (isset($_POST['pers5'])) {
-            include('conexao.php');
+                include('conexao.php');
 
             $ID = 2;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
@@ -190,8 +188,7 @@
         }
 
 
-        if (isset($_POST['pers6'])) {
-            include('conexao.php');
+        if (isset($_POST['pers6'])) {                include('conexao.php');
 
             $ID = 4;
             $sql = "SELECT * FROM personagens WHERE Idpersonagem =$ID";
