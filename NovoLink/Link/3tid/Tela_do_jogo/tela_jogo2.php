@@ -78,31 +78,28 @@
                     <p>Nesse caso o detetive <?php echo $linhaDT['NomeDetetive']; ?> vai ter que descobrir que matou o medico Fred</p>
                     <?php
 
-                        if ($historia == 1) {
+
 
                     ?>
-                        <!-- teste -->
-                        <br>
-                        <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
-                        </p><br>
-                        <p> Patricia a recepcionista, aguardava o seu plantão encerrar, conversando com a médica Meredith que havia colocado o paciente Joseph em uma das alas, após o passeio noturno no Jardim. Na cozinha, o guarda João se preparava para retomar seu posto no hospital, após uma pausa para o lanche. No andar de cima, o médico Fred analisava seus prontuários.
-                        </p>
-                        <p> <br>
-                            Tudo estava calmo e estranho, na televisão um temporal anunciava chegar entre 00:00 e 01:00, todos os funcionários foram de preparo fechar todas as portas, janelas, seria uma noite daquelas na clínica, entretanto algo saiu fora do esperado, alguém acionou o botão de incêndio de emergência, este que abria as alas de todos os pacientes , todos os funcionários foram de imediato fechar as portas das alas, antes que a clínica virasse uma loucura, todos se dividiram, pois haviam portas no andar de cima e no andar de baixo. Após o ocorrido, a recepcionista Patricia perguntou aos outros se haviam visto Fred, pois ele estava com a ficha de todos os pacientes de cada dia.
-                        </p>
-                        <p> <br>
-                            Um silêncio ecoou entre entre o andar principal da clínica, até que Meredith veio de encontro ofegante, dizer que Joseph não estava, em sua ala, todos correram para encontrá-lo procurando pela clínica, as câmeras estavam em manutenção, o que dificultava achá-lo.
-                        </p>
-                        <p> <br>
-                            Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
-                        </p>
+                    <!-- teste -->
+                    <br>
+                    <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
+                    </p><br>
+                    <p> Patricia a recepcionista, aguardava o seu plantão encerrar, conversando com a médica Meredith que havia colocado o paciente Joseph em uma das alas, após o passeio noturno no Jardim. Na cozinha, o guarda João se preparava para retomar seu posto no hospital, após uma pausa para o lanche. No andar de cima, o médico Fred analisava seus prontuários.
+                    </p>
+                    <p> <br>
+                        Tudo estava calmo e estranho, na televisão um temporal anunciava chegar entre 00:00 e 01:00, todos os funcionários foram de preparo fechar todas as portas, janelas, seria uma noite daquelas na clínica, entretanto algo saiu fora do esperado, alguém acionou o botão de incêndio de emergência, este que abria as alas de todos os pacientes , todos os funcionários foram de imediato fechar as portas das alas, antes que a clínica virasse uma loucura, todos se dividiram, pois haviam portas no andar de cima e no andar de baixo. Após o ocorrido, a recepcionista Patricia perguntou aos outros se haviam visto Fred, pois ele estava com a ficha de todos os pacientes de cada dia.
+                    </p>
+                    <p> <br>
+                        Um silêncio ecoou entre entre o andar principal da clínica, até que Meredith veio de encontro ofegante, dizer que Joseph não estava, em sua ala, todos correram para encontrá-lo procurando pela clínica, as câmeras estavam em manutenção, o que dificultava achá-lo.
+                    </p>
+                    <p> <br>
+                        Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
+                    </p>
                     <?php
 
-                        }
 
-                        if ($historia == 2) {
-                            echo "historia 2";
-                        } ?>
+                    ?>
                 </div>
                 <div class="modal-footer">
                     <h2>Jogador: <?php echo $linha['nome']; ?></h2>
@@ -121,29 +118,8 @@
 ?>
 <section class="sct_dialogo">
 
-    <?php
-
-    function continuar()
-    {
-        include('conexao.php');
-        // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
-
-        $_SESSION['IdNovo']++;
-        $IdC = $_SESSION['IdNovo'];
-        $_SESSION['apagarId'] = $IdC;
-        $sqlD = "SELECT * FROM dialogos WHERE IdDialogo = $IdC";
-        $resultD = mysqli_query($conexao, $sqlD);
-        while ($linhaC = mysqli_fetch_array($resultD)) {
-
-            $ccc = $linhaC['IdPers'];
-            $sqlP = "SELECT * FROM personagens WHERE Idpersonagem = $ccc";
-            $resultP = mysqli_query($conexao, $sqlP);
-
-
-            while ($linhaP = mysqli_fetch_array($resultP)) {
-
-
-    ?>
+   
+    
 
 
                 <button class="button2" id="myBtn2">Instruções</button>
@@ -153,6 +129,15 @@
                         <span class="close2">&times;</span>
                         <p>
                         <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
+                        <?php
+                        if($_SESSION['Nivel'] ==1){
+                            echo "historia 1 ativa";
+                        }
+
+                        if($_SESSION['Nivel'] ==2){
+                            echo "historia 2 ativa";
+                        }
+                        ?>
                         - Com o cursor do mouse, passe-o sobre as imagens. <br>
                         - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
                         - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
@@ -164,11 +149,7 @@
                 <!-- começo dos dialogos -->
                 <div id="DialogosJogo" class="dialogo-total">
 
-                    <!-- 
-                        <div class="contador">
-                            <h4><?php echo $IdC; ?> /13</h4>
-                        </div> -->
-
+                  
 
 
 
@@ -199,31 +180,45 @@
                                 </p>
                             </div>
                         </div>
+<?php
+if ($_SESSION['Nivel']==1) {
+    
 
+
+?>
                         <div class="armas">
                             <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
                             <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
-                            <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
+                            <a href="winner2.php"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
                             <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
                             <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
                             <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
                         </div>
+<?php } ?>
 
+
+<?php
+if ($_SESSION['Nivel']==2) {
+    
+
+
+?>
+                        <div class="armas">
+                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 1</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 2</button></a>
+                            <a href="winner2.php"><button class="arma" id="myBtn3">personagens 3</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 4</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 5</button></a>
+                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 6</button></a>
+                        </div>
+<?php } ?>
                     </article>
+
+
                 </section>
 
 
 
-    <?php
-            }
-        }
-    }
-
-
-    continuar();
-
-
-    ?>
 
 
 

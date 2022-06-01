@@ -16,9 +16,14 @@
     <div class="box">
         <h1>PARABÉNS DETETIVE!</h1>
         <p>Você desvendou o misterio, prendeu o assassino e descobriu que arma foi usada no crime, bom trabalho!</p><br><br>
-        <a href="pag_home.html">FINAL</a>
+        <a href="tela_jogo2.php">FINAL</a>
     </div>
 
 </body>
+
+<?php
+ session_start();
+ $_SESSION['Nivel'] =2;
+?>
 
 </html>

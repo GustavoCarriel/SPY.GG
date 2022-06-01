@@ -19,6 +19,9 @@
     
      <?php
         session_start();
+$_SESSION['Nivel'] =1;
+
+
         $IdNovo = 1;
         function comecar($IdNovo)
         {
