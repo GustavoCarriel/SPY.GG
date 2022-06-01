@@ -32,7 +32,6 @@
                 <?php
                 session_start();
 
-
                 include('conexao.php');
                 // $conexao = mysqli_connect("localhost", "u413309708_mrmurder", "Mrsmuder2022", "vu413309708_projeto");
 
@@ -76,11 +75,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Nesse caso o detetive <?php echo $linhaDT['NomeDetetive']; ?> vai ter que descobrir que matou o medico Fred</p>
-                    <?php
 
-
-
-                    ?>
                     <!-- teste -->
                     <br>
                     <p> Era quinta-feira pouco mais das 22:40, o tempo estava frio e com uma neblina que cobria o formato exato da clínica psiquiátrica de “Care of Crazy”, a cidade por sua vez estava tranquila, pela janela a Enfermeira Ana observava o movimento.
@@ -96,10 +91,6 @@
                     <p> <br>
                         Joseph possuía um quarto separado, pois seu estado era perigoso, nele foi encontrado o corpo de Fred. A enfermeira Ana, e o Guarda João encontraram Joseph desmaiado no Jardim, ele havia tentado fugir, mas não conseguiu, quando acordou disse que a única coisa que se lembrava era de alguém entrando no seu quarto, antes dele mesmo sair.
                     </p>
-                    <?php
-
-
-                    ?>
                 </div>
                 <div class="modal-footer">
                     <h2>Jogador: <?php echo $linha['nome']; ?></h2>
@@ -118,104 +109,170 @@
 ?>
 <section class="sct_dialogo">
 
-   
-    
 
 
-                <button class="button2" id="myBtn2">Instruções</button>
 
-                <div id="myModal2" class="modal">
-                    <div class="modal-content">
-                        <span class="close2">&times;</span>
-                        <p>
-                        <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
-                        <?php
-                        if($_SESSION['Nivel'] ==1){
-                            echo "historia 1 ativa";
-                        }
 
-                        if($_SESSION['Nivel'] ==2){
-                            echo "historia 2 ativa";
-                        }
-                        ?>
-                        - Com o cursor do mouse, passe-o sobre as imagens. <br>
-                        - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
-                        - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
-                        </p>
-                    </div>
+
+    <button class="button2" id="myBtn2">Instruções</button>
+
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <p>
+            <h3>Olá, é aqui onde você vai começar seu segundo caso, descubra qual foi a causa ou a arma usada no crime pelo(a) Assasino(a).</h3><br>
+            - Com o cursor do mouse, passe-o sobre as imagens. <br>
+            - As imagens indicarão qual é a arma ou a causa e farão uma descrição de como uma pessoa pode morrer por causa delas.<br>
+            - Com essas descrições, descubra qual foi a arma usada ou a causa da morte da vitíma.
+            </p>
+        </div>
+    </div>
+    </article>
+
+    <!-- começo dos dialogos -->
+
+
+    <ul id="album-fotos">
+        <li id="foto01"><span> João:<br> Guarda</span></li>
+        <li id="foto02"><span>Meredith:<br> Medica</span></li>
+        <li id="foto03"><span>Patricia:<br> Secretaria</span></li>
+        <li id="foto04"><span>Ana:<br> Enfermeira </span></li>
+        <li id="foto05"><span>Joseph:<br>Paciente</span></li>
+    </ul>
+
+    <div class="lista_mapa">
+        <div class="fundo-lista">   
+            <img src="caderno.jpg">
+         <div class="lista2">
+                <h2>Depoimento dos supeitos:</h2>
+                <hr class="hr">
+                <li>João</li>
+                <hr class="hr">
+                <li>Meredith</li>
+                <hr class="hr">
+                <li>Patricia</li>
+                <hr class="hr">
+                <li>Joseph</li>
+            </div>
+        </div>
+        
+        <script>
+            function imageZoom(imgID, resultID) {
+                var img, lens, result, cx, cy;
+                img = document.getElementById(imgID);
+                result = document.getElementById(resultID);
+                /*create lens:*/
+                lens = document.createElement("DIV");
+                lens.setAttribute("class", "img-zoom-lens");
+                /*insert lens:*/
+                img.parentElement.insertBefore(lens, img);
+                /*calculate the ratio between result DIV and lens:*/
+                cx = result.offsetWidth / lens.offsetWidth;
+                cy = result.offsetHeight / lens.offsetHeight;
+                /*set background properties for the result DIV:*/
+                result.style.backgroundImage = "url('" + img.src + "')";
+                result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+                /*execute a function when someone moves the cursor over the image, or the lens:*/
+                lens.addEventListener("mousemove", moveLens);
+                img.addEventListener("mousemove", moveLens);
+                /*and also for touch screens:*/
+                lens.addEventListener("touchmove", moveLens);
+                img.addEventListener("touchmove", moveLens);
+
+                function moveLens(e) {
+                    var pos, x, y;
+                    /*prevent any other actions that may occur when moving over the image:*/
+                    e.preventDefault();
+                    /*get the cursor's x and y positions:*/
+                    pos = getCursorPos(e);
+                    /*calculate the position of the lens:*/
+                    x = pos.x - (lens.offsetWidth / 2);
+                    y = pos.y - (lens.offsetHeight / 2);
+                    /*prevent the lens from being positioned outside the image:*/
+                    if (x > img.width - lens.offsetWidth) {
+                        x = img.width - lens.offsetWidth;
+                    }
+                    if (x < 0) {
+                        x = 0;
+                    }
+                    if (y > img.height - lens.offsetHeight) {
+                        y = img.height - lens.offsetHeight;
+                    }
+                    if (y < 0) {
+                        y = 0;
+                    }
+                    /*set the position of the lens:*/
+                    lens.style.left = x + "px";
+                    lens.style.top = y + "px";
+                    /*display what the lens "sees":*/
+                    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+                }
+
+                function getCursorPos(e) {
+                    var a, x = 0,
+                        y = 0;
+                    e = e || window.event;
+                    /*get the x and y positions of the image:*/
+                    a = img.getBoundingClientRect();
+                    /*calculate the cursor's x and y coordinates, relative to the image:*/
+                    x = e.pageX - a.left;
+                    y = e.pageY - a.top;
+                    /*consider any page scrolling:*/
+                    x = x - window.pageXOffset;
+                    y = y - window.pageYOffset;
+                    return {
+                        x: x,
+                        y: y
+                    };
+                }
+            }
+        </script>
+
+
+        <div class="img-zoom-container">
+            <img id="myimage" src="caderno.jpg" width="300" height="150">
+            <div id="myresult" class="img-zoom-result"></div>
+        </div>
+
+
+        <script>
+            // Initiate zoom effect:
+            imageZoom("myimage", "myresult");
+        </script>
+
+
+</div>
+
+<!-- fim dos dialogos -->
+
+    <section class="sct_palpite1">
+
+        <article>
+
+            <button class="button3" id="myBtn3">Resposta</button>
+
+            <div id="myModal3" class="modal2"><span class="close3">&times;</span>
+
+                <div class="modal-content2">
+
+                    <p>
+                        - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>
+                    </p>
                 </div>
-                </article>
+            </div>
 
-                <!-- começo dos dialogos -->
-                <div id="DialogosJogo" class="dialogo-total">
+            <div class="armas">
+                <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
+                <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
+                <a href="winner.html"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
+                <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
+                <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
+                <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
+            </div>
 
-                  
+        </article>
+    </section>
 
-
-
-                </div>
-
-                <ul id="album-fotos">
-                    <li id="foto01"><span> Injeção de Ar?<br> Ao encher uma seringa com ar e injetar em uma artéria, isso causará um coágulo, interrompendo a circulação sanguínea deixando o tecido sem oxigênio. </span></li>
-                    <li id="foto02"><span> Lençol?<br> Ao cobrir as passagens de ar com um pano, o sufocamento ocorrerá em poucos minutos, isso deixará o individúo inconciente.</span></li>
-                    <li id="foto03"><span> Overdose? <br> Ao usar um alta dosagem de alguma substância, lícita ou ilícita, isso causará o sobrecarregamento do corpo, podendo ocasionar na morte.</span></li>
-                    <li id="foto04"><span> Envenenamento? <br> Ao ingerir uma substâcia toxica, vira oral ou nasal,em pucos minutos os efeitos colaterais começarão a aparecer, como naúseas e desmaio. </span></li>
-                    <li id="foto05"><span> Enforcamento? <br>Ao interromper a circulação e ar pela traqueia, isso deixará o invidúo inconciente e em pouco minutos isso ocasionará na morte do mesmo.</span></li>
-                    <li id="foto06"><span> Fratura no Cerebelo?<br> Dependendo da intensidade da lesão no cerebelo, seu resultado pode causar um sequela permanete ou até ocasionar em morte.</span></li>
-                </ul>
-                <!-- fim dos dialogos -->
-
-                <section class="sct_palpite1">
-
-                    <article>
-
-                        <button class="button3" id="myBtn3">Resposta</button>
-
-                        <div id="myModal3" class="modal2"><span class="close3">&times;</span>
-
-                            <div class="modal-content2">
-
-                                <p>
-                                    - Selecione um botão e descubra qual foi a arma usada ou causa da morte da vitíma.<br>
-                                </p>
-                            </div>
-                        </div>
-<?php
-if ($_SESSION['Nivel']==1) {
-    
-
-
-?>
-                        <div class="armas">
-                            <a href="lost2.php"><button class="arma" id="myBtn3">Lençol</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">Overdose</button></a>
-                            <a href="winner2.php"><button class="arma" id="myBtn3">Injeção de Ar</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">Envenenamento</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">Enforcamento</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">Fratura no Cerebelo</button></a>
-                        </div>
-<?php } ?>
-
-
-<?php
-if ($_SESSION['Nivel']==2) {
-    
-
-
-?>
-                        <div class="armas">
-                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 1</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 2</button></a>
-                            <a href="winner2.php"><button class="arma" id="myBtn3">personagens 3</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 4</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 5</button></a>
-                            <a href="lost2.php"><button class="arma" id="myBtn3">personagens 6</button></a>
-                        </div>
-<?php } ?>
-                    </article>
-
-
-                </section>
 
 
 

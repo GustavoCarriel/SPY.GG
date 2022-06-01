@@ -8,9 +8,6 @@
 }
 
 
-/*  */
-
-
 /* From uiverse.io by @gagan-gv */
 
 .loader {
@@ -73,7 +70,7 @@ body {
     margin: 0 auto;
     grid-template-columns: 70% 30%;
     grid-template-rows: 10vh 1fr;
-    grid-template-areas: 'header header' 'left right';
+    grid-template-areas: 'header header''left right';
 }
 
 header {
@@ -208,6 +205,8 @@ header .image .detetive img {
     color: #fff;
     background-color: rgba(74, 74, 74, 0.9);
 }
+
+.modal2 p {}
 
 
 /* Modal Content */
@@ -362,10 +361,10 @@ header .image .detetive img {
     grid-area: left;
     border: 1px solid red;
     border-radius: 20px;
-    width: 90%;
-    height: 80vh;
-    padding: 2%;
-    padding-left: 10%;
+    width: 100%;
+    height: 90vh;
+    padding: 0;
+    padding-left: 1%;
     padding-top: 3%;
     margin: 5vh 5%;
     backdrop-filter: blur(50px);
@@ -374,54 +373,17 @@ header .image .detetive img {
     box-shadow: 0 0 10px red;
 }
 
-.sct_palpite {
-    grid-area: right;
-    border: 3px solid #bebebe;
-    box-shadow: 0 0 10px #bebebe;
-    border-radius: 20px;
-    height: 80vh;
-    width: 90%;
-    margin: 5vh 5%;
-    backdrop-filter: blur(50px);
-}
-
 .sct_palpite1 {
-    margin-top: -9%;
-    margin-left: 109%;
+    margin-top: -57%;
+    margin-left: 105%;
     grid-area: right;
     border: 3px solid rgb(161, 0, 0);
     border-radius: 20px;
     height: 80vh;
-    width: 45%;
+    width: 30%;
     /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
     -webkit-backdrop-filter: blur(50px);
     box-shadow: 0 0 10px #cf0f0f;
-}
-
-.suspeitos {
-    background-color: #60070c;
-    height: 100%;
-    width: 50%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.inocentes {
-    background-color: #17521e;
-    height: 100%;
-    width: 50%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.div_personagem {
-    display: flex;
-    margin: 5% 0;
-    justify-content: center;
-}
-
-.div_personagem img {
-    height: 100px;
 }
 
 .botao {
@@ -442,24 +404,6 @@ header .image .detetive img {
     box-shadow: 0 0 5px #ff0043, 0 0 25px #ff0043, 0 0 50px #ff0043, 0 0 100px #ff0043;
     background-color: #ff0043;
 }
-
-.contador {
-    font-family: var(--font);
-    font-size: 18px;
-    color: #223;
-    margin-bottom: 3%;
-    padding: 5px;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    box-shadow: 0 0 10px #bebebe;
-    border-radius: 12px;
-    width: 9%;
-}
-
-
-/* #DialogosJogo {
-    display: none;
-} */
 
 .dialogo-personagens {
     backdrop-filter: blur(50px);
@@ -508,32 +452,6 @@ header .image .detetive img {
     padding-bottom: 2%;
 }
 
-.nome-dialogo {
-    color: #23cd37;
-}
-
-#div1,
-#div2,
-#div3 {
-    height: 65vh;
-    width: 25%;
-    padding: 10px;
-    margin: auto;
-    border: 2px solid #aaaaaa;
-}
-
-#drag1 {
-    margin-bottom: 5px;
-}
-
-#div2 {
-    background: rgb(47, 156, 51);
-}
-
-#div3 {
-    background: rgb(156, 47, 47);
-}
-
 .button1 {
     cursor: pointer;
     background: rgb(114, 43, 43);
@@ -555,11 +473,11 @@ header .image .detetive img {
 
 ul#album-fotos li {
     padding-right: 5px;
-    margin-left: 5%;
+    margin-left: 4%;
     margin-top: 2%;
     float: left;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 2px solid #ff0043;
     border-radius: 10px;
     list-style: none;
@@ -571,20 +489,19 @@ ul#album-fotos li span {
     width: 300px;
     margin-right: 20%;
     opacity: 0;
-    color: white;
-    text-shadow: rgb(109, 0, 0) 0.1em 0.1em 0.2em;
+    color: rgb(255, 183, 183);
+    text-shadow: rgb(255, 1, 1) 0.1em 0.1em 0.2em;
     background: 20px 20px 20px 20px;
     line-break: auto;
     line-height: 30px;
-    font-size: 10pt;
+    font-weight: 800;
+    font-size: 1.7rem;
     padding: 5px;
     padding-left: 2%;
 }
 
 ul#album-fotos li:hover {
-    box-shadow: 0 0 20px #f10000;
-    -webkit-transform: scale(1.5);
-    -webkit-transition: all 0.4s ease-in;
+    box-shadow: transparent;
 }
 
 ul#album-fotos li:hover span {
@@ -592,81 +509,100 @@ ul#album-fotos li:hover span {
 }
 
 li#foto01 {
-    background-image: url('../Tela_do_jogo/seringa.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+    background-image: url('../Tela_do_jogo/img/Joao.svg');
+    background-position: 35% 35%;
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    background-color: rgb(78, 78, 78);
 }
 
 ul#album-fotos li#foto01:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+    filter: grayscale(50%);
 }
 
 li#foto02 {
-    background-image: url('../Tela_do_jogo/cama.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+    background-image: url('../Tela_do_jogo/img/Meredith.svg');
+    background-position: 35% 35%;
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    background-color: rgb(78, 78, 78);
 }
 
 ul#album-fotos li#foto02:hover {
     background-position: 0px 0px;
-    background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+    background-size: 190px 190px;
+    filter: grayscale(50%);
 }
 
 li#foto03 {
-    background-image: url('../Tela_do_jogo/remedio.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+    background-image: url('../Tela_do_jogo/img/Patricia.svg');
+    background-position: 35% 35%;
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    background-color: rgb(78, 78, 78);
 }
 
 ul#album-fotos li#foto03:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+    filter: grayscale(50%);
 }
 
 li#foto04 {
-    background-image: url('../Tela_do_jogo/tosse.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+    background-image: url('../Tela_do_jogo/img/Ana.svg');
+    background-position: 35% 35%;
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    background-color: rgb(78, 78, 78);
 }
 
 ul#album-fotos li#foto04:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+    filter: grayscale(50%);
 }
 
 li#foto05 {
-    background-image: url('../Tela_do_jogo/homem.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+    background-image: url('../Tela_do_jogo/img/Joseph.svg');
+    background-position: 35% 35%;
+    background-size: 170px 170px;
+    background-repeat: no-repeat;
+    background-color: rgb(78, 78, 78);
 }
 
 ul#album-fotos li#foto05:hover {
     background-position: 0px 0px;
     background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+    filter: grayscale(50%);
 }
 
-li#foto06 {
-    background-image: url('../Tela_do_jogo/fratura.jpg');
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: white;
+.fundo-lista {
+    margin: 4% 4% 4% 4%;
+    border: 1px red solid;
+    margin-top: 19%;
+    width: 34%;
+    height: 55%;
 }
 
-ul#album-fotos li#foto06:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-    background-image: linear-gradient(#8B0000, #363636);
+.fundo-lista img {
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+
+.lista2 {
+    color: #fff;
+    outline: 0;
+    border: 0;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+}
+
+.hr {
+    border-top: 1px solid red;
 }
 
 .armas {
@@ -692,4 +628,28 @@ ul#album-fotos li#foto06:hover {
 .arma:hover {
     box-shadow: 0 0 5px #be254e, 0 0 25px #be254e, 0 0 50px #be254e, 0 0 100px #be254e;
     background-color: #be254e;
+}
+
+.lista_mapa {
+    display: flex;
+    float: right;
+}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 300px;
+    height: 200px;
 }
